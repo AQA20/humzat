@@ -16,8 +16,8 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::middleware(['api', 'throttle:api'])->group(function () {
     // ✅ Auth Public routes
-    Route::post('/register', RegisterController::class);
-    Route::post('/login', LoginController::class);
+    Route::post('/register', RegisterController::class)->middleware('throttle:register');
+    Route::post('/login', LoginController::class)->middleware('throttle:login');
 
 
     // ✅ Public routes
@@ -38,7 +38,9 @@ Route::middleware(['api', 'throttle:api'])->group(function () {
         Route::post('/logout', LogoutController::class);
         Route::get('/me', fn(Request $request) => new UserResource($request->user()));
         Route::apiResource('posts', PostController::class)->only(['store', 'update', 'destroy']);
-        Route::apiResource('comments', CommentController::class)->only(['store', 'update', 'destroy']);
+        Route::apiResource('comments', CommentController::class)
+            ->only(['store', 'update', 'destroy'])
+            ->middleware('throttle:comment');
         // Media store and destroy routes explicitly
         Route::post('/media', [MediaController::class, 'store']);    // upload
         Route::delete('/media/{media}', [MediaController::class, 'destroy']);  // delete by id

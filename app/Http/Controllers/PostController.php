@@ -72,8 +72,9 @@ class PostController extends Controller
     {
         $validatedRequest = $request->validated();
         $externalUrl = $validatedRequest['external_url'];
+        $uniqueExternalUrl = $validatedRequest['unique_external_url'] ?? false;
 
-        if ($externalUrl && $validatedRequest['unique_external_url']) {
+        if ($externalUrl && $uniqueExternalUrl) {
             $existingPost = Post::where('external_url', $externalUrl)->first();
             if ($existingPost) {
                 return response()->json([
