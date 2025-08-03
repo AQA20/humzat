@@ -1,0 +1,169 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: self-hosted
+
+    env:
+      DB_CONNECTION: sqlite
+      DB_DATABASE: ":memory:"
+      CACHE_DRIVER: array
+      QUEUE_CONNECTION: sync
+
+      AWS_LOGGING: false
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+      AWS_URL: ${{ secrets.AWS_URL }}
+      AWS_USE_PATH_STYLE_ENDPOINT: ${{ secrets.AWS_USE_PATH_STYLE_ENDPOINT }}
+
+      CLOUDFRONT_DOMAIN: ${{ secrets.CLOUDFRONT_DOMAIN }}
+      CLOUDFRONT_KEY_PAIR_ID: ${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
+      CLOUDFRONT_PRIVATE_KEY_PATH: ${{ secrets.CLOUDFRONT_PRIVATE_KEY_PATH }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, bcmath, sqlite, gd
+          tools: composer
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-scripts
+
+      - name: Copy .env.example to .env for tests
+        run: cp .env.example .env
+
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: Run database migrations
+        run: php artisan migrate --force
+
+      - name: Run tests
+        run: php artisan test
+
+  deploy:
+    name: Deploy to Production
+    runs-on: self-hosted
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mbstring, bcmath, pdo_pgsql, gd
+          tools: composer
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Sync project to /var/www/humzat-api
+        run: |
+          sudo rsync -av --exclude='.git' --exclude='node_modules' --exclude='tests' ./ /var/www/humzat-api/
+
+      - name: Set permissions
+        run: |
+          sudo chown -R ubuntu:www-data /var/www/humzat-api
+          sudo chmod -R 775 /var/www/humzat-api/storage /var/www/humzat-api/bootstrap/cache
+
+      - name: Write .env file on server from GitHub Secrets
+        run: |
+          cat > /var/www/humzat-api/.env <<EOF
+          APP_NAME=${{ secrets.APP_NAME }}
+          APP_ENV=${{ secrets.APP_ENV }}
+          APP_KEY=${{ secrets.APP_KEY }}
+          APP_DEBUG=${{ secrets.APP_DEBUG }}
+          APP_URL=${{ secrets.APP_URL }}
+
+          APP_LOCALE=${{ secrets.APP_LOCALE }}
+          APP_FALLBACK_LOCALE=${{ secrets.APP_FALLBACK_LOCALE }}
+          APP_FAKER_LOCALE=${{ secrets.APP_FAKER_LOCALE }}
+
+          APP_MAINTENANCE_DRIVER=${{ secrets.APP_MAINTENANCE_DRIVER }}
+
+          PHP_CLI_SERVER_WORKERS=${{ secrets.PHP_CLI_SERVER_WORKERS }}
+
+          BCRYPT_ROUNDS=${{ secrets.BCRYPT_ROUNDS }}
+
+          LOG_CHANNEL=${{ secrets.LOG_CHANNEL }}
+          LOG_STACK=${{ secrets.LOG_STACK }}
+          LOG_DEPRECATIONS_CHANNEL=${{ secrets.LOG_DEPRECATIONS_CHANNEL }}
+          LOG_LEVEL=${{ secrets.LOG_LEVEL }}
+
+          DB_CONNECTION=${{ secrets.DB_CONNECTION }}
+          DB_HOST=${{ secrets.DB_HOST }}
+          DB_PORT=${{ secrets.DB_PORT }}
+          DB_DATABASE=${{ secrets.DB_DATABASE }}
+          DB_USERNAME=${{ secrets.DB_USERNAME }}
+          DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+
+          SESSION_DRIVER=${{ secrets.SESSION_DRIVER }}
+          SESSION_LIFETIME=${{ secrets.SESSION_LIFETIME }}
+          SESSION_ENCRYPT=${{ secrets.SESSION_ENCRYPT }}
+          SESSION_PATH=${{ secrets.SESSION_PATH }}
+          SESSION_DOMAIN=${{ secrets.SESSION_DOMAIN }}
+
+          BROADCAST_CONNECTION=${{ secrets.BROADCAST_CONNECTION }}
+          FILESYSTEM_DISK=${{ secrets.FILESYSTEM_DISK }}
+          QUEUE_CONNECTION=${{ secrets.QUEUE_CONNECTION }}
+
+          CACHE_STORE=${{ secrets.CACHE_STORE }}
+
+          MEMCACHED_HOST=${{ secrets.MEMCACHED_HOST }}
+
+          REDIS_CLIENT=${{ secrets.REDIS_CLIENT }}
+          REDIS_HOST=${{ secrets.REDIS_HOST }}
+          REDIS_PASSWORD=${{ secrets.REDIS_PASSWORD }}
+          REDIS_PORT=${{ secrets.REDIS_PORT }}
+
+          MAIL_MAILER=${{ secrets.MAIL_MAILER }}
+          MAIL_SCHEME=${{ secrets.MAIL_SCHEME }}
+          MAIL_HOST=${{ secrets.MAIL_HOST }}
+          MAIL_PORT=${{ secrets.MAIL_PORT }}
+          MAIL_USERNAME=${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }}
+          MAIL_FROM_ADDRESS=${{ secrets.MAIL_FROM_ADDRESS }}
+          MAIL_FROM_NAME=${{ secrets.MAIL_FROM_NAME }}
+
+          AWS_LOGGING=${{ secrets.AWS_LOGGING }}
+          AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_BUCKET=${{ secrets.AWS_BUCKET }}
+          AWS_URL=${{ secrets.AWS_URL }}
+          AWS_USE_PATH_STYLE_ENDPOINT=${{ secrets.AWS_USE_PATH_STYLE_ENDPOINT }}
+
+          CLOUDFRONT_DOMAIN=${{ secrets.CLOUDFRONT_DOMAIN }}
+          CLOUDFRONT_KEY_PAIR_ID=${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
+          CLOUDFRONT_PRIVATE_KEY_PATH=${{ secrets.CLOUDFRONT_PRIVATE_KEY_PATH }}
+
+          VITE_APP_NAME=${{ secrets.VITE_APP_NAME }}
+          EOF
+
+      - name: Run Laravel setup
+        run: |
+          cd /var/www/humzat-api
+          php artisan migrate --force
+
+      - name: Generate API Documentation with Scribe
+        run: |
+          cd /var/www/humzat-api
+          php artisan scribe:generate
+
+      - name: Reload Nginx and PHP-FPM (optional, if needed)
+        run: |
+          sudo systemctl reload nginx
+          sudo systemctl reload php8.2-fpm

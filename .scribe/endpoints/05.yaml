@@ -1,0 +1,154 @@
+name: 'Hashtag Routes'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/hashtags
+    metadata:
+      groupName: 'Hashtag Routes'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a paginated list of hashtags with the count of related posts.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":"b936aa0a-9566-42b5-bdca-c0f5648b1421","name":"\u063a\u0632\u0629","posts_count":3,"created_at":"2025-08-02 13:25:37","updated_at":"2025-08-02 13:25:37"},{"id":"738a23cf-5a3e-4dcb-b8ad-aed5106cc288","name":"\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","posts_count":2,"created_at":"2025-08-02 13:25:37","updated_at":"2025-08-02 13:25:37"},{"id":"4c2b2ad0-9d5c-41b4-9755-8f2e6ac8b073","name":"\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629","posts_count":2,"created_at":"2025-08-02 13:25:37","updated_at":"2025-08-02 13:25:37"},{"id":"9e031b34-985c-42d0-9b19-8265fdee0f1b","name":"\u062f\u0648\u0646\u0627\u0644\u062f \u062a\u0631\u0645\u0628","posts_count":2,"created_at":"2025-08-02 13:25:44","updated_at":"2025-08-02 13:25:44"},{"id":"c5fec62b-f55a-4e82-a502-f6f87bb5eafe","name":"\u063a\u0648\u0627\u0635\u0627\u062a \u0646\u0648\u0648\u064a\u0629","posts_count":2,"created_at":"2025-08-02 13:25:44","updated_at":"2025-08-02 13:25:44"},{"id":"8840b0c8-cf25-424e-9402-2fbcb8be7620","name":"\u0627\u0644\u0633\u064a\u0627\u0633\u0629 \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629","posts_count":1,"created_at":"2025-08-02 13:25:40","updated_at":"2025-08-02 13:25:40"},{"id":"aa1b491b-b50b-4dd6-b065-a0a0dcb85846","name":"\u062f\u0648\u0646\u0627\u0644\u062f \u062a\u0631\u0627\u0645\u0628","posts_count":1,"created_at":"2025-08-02 13:25:40","updated_at":"2025-08-02 13:25:40"},{"id":"a6bfd5d9-bcc3-4951-aba5-311153948537","name":"\u0631\u0648\u0633\u064a\u0627","posts_count":1,"created_at":"2025-08-02 13:25:44","updated_at":"2025-08-02 13:25:44"},{"id":"108b9604-fa5c-4101-b853-79e795f0e0a0","name":"\u0627\u0644\u062a\u0648\u062a\u0631 \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a \u0627\u0644\u0631\u0648\u0633\u064a","posts_count":1,"created_at":"2025-08-02 13:25:53","updated_at":"2025-08-02 13:25:53"},{"id":"d3b55a14-da32-4d28-95b2-0e88d165a37f","name":"\u0623\u0632\u0645\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629","posts_count":1,"created_at":"2025-08-02 13:25:47","updated_at":"2025-08-02 13:25:47"}],"links":{"first":"http:\/\/humzat.local\/api\/hashtags?page=1","last":"http:\/\/humzat.local\/api\/hashtags?page=2","prev":null,"next":"http:\/\/humzat.local\/api\/hashtags?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/humzat.local\/api\/hashtags?page=1","label":"1","active":true},{"url":"http:\/\/humzat.local\/api\/hashtags?page=2","label":"2","active":false},{"url":"http:\/\/humzat.local\/api\/hashtags?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/humzat.local\/api\/hashtags","per_page":10,"to":10,"total":12}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '20'
+          x-ratelimit-remaining: '19'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/hashtags/{id}'
+    metadata:
+      groupName: 'Hashtag Routes'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified hashtag along with its related posts (paginated).'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the hashtag.'
+        required: true
+        example: b936aa0a-9566-42b5-bdca-c0f5648b1421
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: b936aa0a-9566-42b5-bdca-c0f5648b1421
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"hashtag":{"id":"b936aa0a-9566-42b5-bdca-c0f5648b1421","name":"\u063a\u0632\u0629","created_at":"2025-08-02 13:25:37","updated_at":"2025-08-02 13:25:37"},"posts":{"data":[{"id":"01986af5-cc6b-73d9-a317-afd5efeb38ec","user_id":"01986af5-950c-72fd-91ef-07c57cbb0730","body":"\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u062a\u0648\u062b\u0651\u0642 \u0628\u0627\u0644\u0641\u064a\u062f\u064a\u0648 \u0627\u0633\u062a\u0647\u062f\u0627\u0641 \u0645\u062f\u0646\u064a\u064a\u0646 \u0641\u064a \u0637\u0648\u0627\u0628\u064a\u0631 \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0628\u063a\u0632\u0629\n\u0623\u0638\u0647\u0631 \u0645\u0642\u0637\u0639 \u0641\u064a\u062f\u064a\u0648 \u0648\u062b\u0651\u0642\u0647 \u0641\u0631\u064a\u0642 \u062a\u0627\u0628\u0639 \u0644\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u0641\u064a \u0642\u0637\u0627\u0639 \u063a\u0632\u0629\u060c \u0644\u062d\u0638\u0629 \u0625\u0637\u0644\u0627\u0642 \u0646\u0627\u0631 \u0645\u0628\u0627\u0634\u0631 \u0639\u0644\u0649 \u0639\u0634\u0631\u0627\u062a \u0627\u0644\u0645\u062f\u0646\u064a\u064a\u0646 \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a\u064a\u0646\u060c \u0623\u062b\u0646\u0627\u0621 \u062a\u062c\u0645\u0639\u0647\u0645 \u0642\u0631\u0628 \u0623\u062d\u062f \u0645\u0631\u0627\u0643\u0632 \u062a\u0648\u0632\u064a\u0639 \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629.","external_url":"https:\/\/www.skynewsarabia.com\/middle-east\/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9","meta":{"tags":["\u063a\u0632\u0629","\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629"]},"hashtags":["\u063a\u0632\u0629","\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629"],"media":[{"id":"01986af5-d42a-7282-b61d-8983be424496","name":"media\/images\/3d6f66a6-92c8-4264-9cc7-0ee9132f4821.png","url":"https:\/\/d1070l6upf61hp.cloudfront.net\/media\/images\/3d6f66a6-92c8-4264-9cc7-0ee9132f4821.png?Expires=1754144752&Signature=cuY6-ULS6UnJXDElOgJu0eqPO7ve~9R7a8SGDOReSgZIyG6myTxjU6GNVI9e8BaVFoNVvEBFRm9BqqgRLcCMSD~Z~JUk33xZhTdvZnl4u6oA3o7tq75a29ehgBZ2Jy5cUPoOgF2b1skG2U8VaRUfoPO0zgbBTnKFaj1Obfm1p5DV-azLnLxSqFfazInfX6M5TdhM1wBUoGBgRFtlUTRTr~Tk-dNTtnlnPgBwEfuCz0HAQlULiHTgtUz~jpNgybxHMb2L~47kaeBDJnN21s2pfjhex2HXjjA8A~WbWwuV1i5y0peYEguX-O9eEILaHQ8O56WOPCnq6pOLitd6B7IQ3A__&Key-Pair-Id=K1QD0FFQU2OZI5","type":"image","meta":null,"created_at":"2025-08-02T10:25:52.000000Z","updated_at":"2025-08-02T10:25:52.000000Z"}],"type":"IMAGE","user":{"id":"01986af5-950c-72fd-91ef-07c57cbb0730","username":"skynewsarabia","name":null,"bio":null,"profile_picture_url":"https:\/\/d1070l6upf61hp.cloudfront.net\/profile_pictures\/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL?Expires=1754154948&Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&Key-Pair-Id=K1QD0FFQU2OZI5","created_at":"2025-08-02T13:25:36+03:00","updated_at":"2025-08-02T13:25:50+03:00"},"created_at":"2025-08-02T10:25:50.000000Z","updated_at":"2025-08-02T10:25:50.000000Z"},{"id":"01986af5-bfc1-7347-a819-c07019e0277b","user_id":"01986af5-bc06-713f-9b2a-c6c69c0a752b","body":"\u0637\u0628\u064a\u0628 \u0628\u0631\u064a\u0637\u0627\u0646\u064a \u064a\u0643\u0634\u0641: \u0623\u0637\u0641\u0627\u0644 \u063a\u0632\u0629 \u064a\u0633\u062f\u0648\u0646 \u062c\u0648\u0639\u0647\u0645 \u0628\u0627\u0644\u0645\u0627\u0621 \u0648\u0627\u0644\u0645\u0644\u062d\n\u0643\u0634\u0641 \u0627\u0644\u062c\u0631\u0627\u062d \u0627\u0644\u0628\u0631\u064a\u0637\u0627\u0646\u064a \u063a\u0631\u0627\u064a\u0645 \u063a\u0631\u0648\u0645\u060c \u0639\u0642\u0628 \u0639\u0648\u062f\u062a\u0647 \u0645\u0646 \u0645\u0647\u0645\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629 \u0641\u064a \u0642\u0637\u0627\u0639 \u063a\u0632\u0629\u060c \u0639\u0646 \u0645\u0634\u0627\u0647\u062f \u0645\u0631\u0648\u0639\u0629 \u0644\u0645\u0639\u0627\u0646\u0627\u0629 \u0627\u0644\u0623\u0637\u0641\u0627\u0644 \u0645\u0646 \u0627\u0644\u062c\u0648\u0639. \u0648\u0623\u0648\u0636\u062d \u063a\u0631\u0648\u0645 \u0623\u0646 \u0627\u0644\u0635\u063a\u0627\u0631 \u064a\u0644\u062c\u0624\u0648\u0646 \u0625\u0644\u0649 \u0634\u0631\u0628 \u0627\u0644\u0645\u0627\u0621 \u0627\u0644\u0645\u0627\u0644\u062d \u0644\u0644\u0634\u0639\u0648\u0631 \u0628\u0627\u0644\u0634\u0628\u0639 \u0648\u0645\u062d\u0627\u0648\u0644\u0629 \u0627\u0644\u0646\u0648\u0645\u060c \u0641\u064a \u0634\u0647\u0627\u062f\u0629 \u0635\u0627\u062f\u0645\u0629 \u062a\u0633\u0644\u0637 \u0627\u0644\u0636\u0648\u0621 \u0639\u0644\u0649 \u062a\u0641\u0627\u0642\u0645 \u0627\u0644\u0623\u0632\u0645\u0629 \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629 \u0627\u0644\u0645\u0641\u062a\u0639\u0644\u0629 \u0641\u064a \u0627\u0644\u0642\u0637\u0627\u0639.","external_url":"https:\/\/www.aljazeera.net\/news\/2025\/8\/2\/%D8%B7%D8%A8%D9%8A%D8%A8-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%85%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D9%85%D9%84%D8%AD-%D9%82%D9%88%D8%AA-%D8%A3%D8%B7%D9%81%D8%A7%D9%84","meta":{"tags":["\u063a\u0632\u0629","\u0623\u0632\u0645\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629","\u0623\u0637\u0641\u0627\u0644 \u063a\u0632\u0629"]},"hashtags":["\u063a\u0632\u0629","\u0623\u0632\u0645\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629","\u0623\u0637\u0641\u0627\u0644 \u063a\u0632\u0629"],"media":[{"id":"01986af5-c74f-7364-9b94-6de95778e7d8","name":"media\/images\/5bc242e0-a608-4298-96aa-4ac28e29e2e2.jpg","url":"https:\/\/d1070l6upf61hp.cloudfront.net\/media\/images\/5bc242e0-a608-4298-96aa-4ac28e29e2e2.jpg?Expires=1754144749&Signature=U5YJ7O0gMjk4l1pvJaAb59DRTL-lgslqj0Mt9jfcWsz8~148GNusGRTh-NXHo2I759pPCATSuv2Ve3jpCsQBy1bF1yPFEnHf1D~y03gJwt~diJedfxU9aDh8GA9evrpm48LTZYRfGClIXqgrfsZSEZrkggntN5mu4QcBZHOPrtKnAbfZAKXMc6I1SdMKAGx1DVz0xbzM3jwBvffG9QvZeT-WL2KSZs2HFlisG7ObCF65iUA5ykSCfbOrBUnPMErLlb0R68ZY3u0oMuM4Y8~WZmZd8KLY2LSYc2mmuu6-XsEIXAnuVbt3TAECUfEsRao~skxaWR07HMsPFhN3~vF6ag__&Key-Pair-Id=K1QD0FFQU2OZI5","type":"image","meta":null,"created_at":"2025-08-02T10:25:49.000000Z","updated_at":"2025-08-02T10:25:49.000000Z"}],"type":"IMAGE","user":{"id":"01986af5-bc06-713f-9b2a-c6c69c0a752b","username":"aljazeera","name":null,"bio":null,"profile_picture_url":"https:\/\/d1070l6upf61hp.cloudfront.net\/profile_pictures\/61c954b7-54c9-43c5-8fd8-e6ee11022002.net&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL?Expires=1754154948&Signature=TfcVsFihtz9qaxBupliIfmbPn5oRZBEpK06F9yFhE-nxWOzdgtC45zgT5jHbFFcw85AzIxfv5xcflAF5l-brmaMa7102QBK2ZS4RM7hG-crdR8jaImO7YTempNzY2kOtrYEgVBpaKt-xiHhUVdHcVeUriRPLqdAPgjE4wDWZtkskejLaCw~2vjluKshKcSv-9t9HyUES~SQ56aVVvppcizCSeb5qzUul9qDjm1XySQXNYtdSR1ZZS5GDBM2-RjycqR3LL99rdK8JSVou3U-ZcIPsYGFpwOCwbe8VLLJ2AUi5WVMcELuJyxAGDPlSiuM-UBAYt1jLVg3zlkdPRlUo7w__&Key-Pair-Id=K1QD0FFQU2OZI5","created_at":"2025-08-02T13:25:46+03:00","updated_at":"2025-08-02T13:25:47+03:00"},"created_at":"2025-08-02T10:25:47.000000Z","updated_at":"2025-08-02T10:25:47.000000Z"},{"id":"01986af5-9a1d-705d-a854-50fe75e1578c","user_id":"01986af5-950c-72fd-91ef-07c57cbb0730","body":"\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u062a\u0648\u062b\u0651\u0642 \u0627\u0633\u062a\u0647\u062f\u0627\u0641 \u0645\u0646\u062a\u0638\u0631\u064a \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0641\u064a \u063a\u0632\u0629 \u0628\u0625\u0637\u0644\u0627\u0642 \u0646\u0627\u0631 \u062d\u064a\n\u0641\u064a \u0648\u0627\u0642\u0639\u0629 \u0645\u0631\u0648\u0639\u0629\u060c \u0648\u062b\u0651\u0642 \u0641\u0631\u064a\u0642 \u0623\u0645\u0645\u064a \u0641\u064a \u0642\u0637\u0627\u0639 \u063a\u0632\u0629 \u0644\u062d\u0638\u0629 \u0625\u0637\u0644\u0627\u0642 \u0646\u0627\u0631 \u062d\u064a \u0639\u0644\u0649 \u062d\u0634\u062f \u0645\u0646 \u0627\u0644\u0645\u062f\u0646\u064a\u064a\u0646 \u0627\u0644\u0641\u0644\u0633\u0637\u064a\u0646\u064a\u064a\u0646 \u0643\u0627\u0646\u0648\u0627 \u064a\u0646\u062a\u0638\u0631\u0648\u0646 \u062f\u0648\u0631\u0647\u0645 \u0644\u0627\u0633\u062a\u0644\u0627\u0645 \u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0625\u0646\u0633\u0627\u0646\u064a\u0629 \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646 \u0623\u062d\u062f \u0645\u0631\u0627\u0643\u0632 \u0627\u0644\u062a\u0648\u0632\u064a\u0639.","external_url":"https:\/\/www.skynewsarabia.com\/middle-east\/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9","meta":{"tags":["\u063a\u0632\u0629","\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629"]},"hashtags":["\u063a\u0632\u0629","\u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629","\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0627\u062a \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a\u0629"],"media":[{"id":"01986af5-a270-7075-8ef8-ef75ec51bbf3","name":"media\/images\/70579c87-700f-44d7-9472-62e85b6ee288.png","url":"https:\/\/d1070l6upf61hp.cloudfront.net\/media\/images\/70579c87-700f-44d7-9472-62e85b6ee288.png?Expires=1754144739&Signature=Uad10v6ced3zE2PWbxc13HVsl7hju89nbWkkNR0eH2SCgJkEljcPyZnsPraroUgJ8Wv3saxDH7Dcys9PrEsB~6EKrdAvWdvZMZOdwxuagv4jn77RKIoSslTS2RVOpI1iOwObiG1BtcGlT0DihFxD1G8SikuMaocAs-LjQxpORP-~LBZe2wDM97yLM6-M04eIZmduIzmER9QRPAacpX88IELyGipMZtzkMmMhT2S6emBMSyRlKy5VDVMlPy1nXIsz0gJP7WmNS0yFHI~XOL1zcSC2orjFtQn46SPgMSXTxODJqb-wGaJY67JYXMz-CiA1IQ6W4PAqRhm2Qcs7kfyFGQ__&Key-Pair-Id=K1QD0FFQU2OZI5","type":"image","meta":null,"created_at":"2025-08-02T10:25:39.000000Z","updated_at":"2025-08-02T10:25:39.000000Z"}],"type":"IMAGE","user":{"id":"01986af5-950c-72fd-91ef-07c57cbb0730","username":"skynewsarabia","name":null,"bio":null,"profile_picture_url":"https:\/\/d1070l6upf61hp.cloudfront.net\/profile_pictures\/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL?Expires=1754154948&Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&Key-Pair-Id=K1QD0FFQU2OZI5","created_at":"2025-08-02T13:25:36+03:00","updated_at":"2025-08-02T13:25:50+03:00"},"created_at":"2025-08-02T10:25:37.000000Z","updated_at":"2025-08-02T10:25:37.000000Z"}],"links":{"first":"http:\/\/humzat.local\/api\/hashtags\/b936aa0a-9566-42b5-bdca-c0f5648b1421?page=1","last":"http:\/\/humzat.local\/api\/hashtags\/b936aa0a-9566-42b5-bdca-c0f5648b1421?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/humzat.local\/api\/hashtags\/b936aa0a-9566-42b5-bdca-c0f5648b1421?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/humzat.local\/api\/hashtags\/b936aa0a-9566-42b5-bdca-c0f5648b1421","per_page":10,"to":3,"total":3}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '20'
+          x-ratelimit-remaining: '19'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/hashtags/by-name/{name}'
+    metadata:
+      groupName: 'Hashtag Routes'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the specified hashtag by its name, along with its related posts (paginated).'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      name: consequatur
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Hashtag]."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '20'
+          x-ratelimit-remaining: '19'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
