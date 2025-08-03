@@ -71,6 +71,16 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $validatedRequest = $request->validated();
+        $externalUrl = $validatedRequest['external_url'];
+
+        if ($externalUrl && $validatedRequest['unique_external_url']) {
+            $existingPost = Post::where('external_url', $externalUrl)->first();
+            if ($existingPost) {
+                return response()->json([
+                    'message' => 'A post with the same external URL already exists.',
+                ]);
+            }
+        }
 
         $post = $request->user()->posts()->create($validatedRequest);
 

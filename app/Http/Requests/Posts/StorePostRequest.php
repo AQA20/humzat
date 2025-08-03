@@ -24,8 +24,13 @@ class StorePostRequest extends FormRequest
     {
         return [
             'body' => ['required', 'string'],
-            'external_url' => ['nullable', 'url', 'max:2048'],
+            'external_url' => ['nullable', 'url', 'max:2048', function ($attribute, $value, $fail) {
+                if ($this->boolean('unique_external_url') && !$value) {
+                    $fail('The external_url field is required when unique_external_url is true.');
+                }
+            },],
             'type' => ['required', Rule::in(array_map(fn($case) => $case->value, PostType::cases()))],
+            'unique_external_url' => ['nullable', 'boolean'],
             'meta' => ['nullable', 'array'],
             'meta.tags' => ['nullable', 'array'],
             'meta.tags.*' => ['string', 'max:30', 'distinct'],
