@@ -80,4 +80,34 @@ class User extends Authenticatable
 
         return $signer->getSignedUrl($this->profile_picture);
     }
+
+    public function following()
+    {
+        return $this->belongsToMany(
+            User::class,           // related model
+            'follows',             // pivot table
+            'follower_id',         // current user ID on the pivot
+            'followed_id'          // related user ID
+        )->withTimestamps();
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(
+            User::class,
+            'follows',
+            'followed_id',
+            'follower_id'
+        )->withTimestamps();
+    }
+
+    public function getFollowersCountAttribute(): int
+    {
+        return $this->followers()->count();
+    }
+
+    public function getFollowingCountAttribute(): int
+    {
+        return $this->following()->count();
+    }
 }
