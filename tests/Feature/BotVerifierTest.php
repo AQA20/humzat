@@ -2,16 +2,19 @@
 
 namespace Tests\Feature;
 
+use Mockery;
 use Tests\TestCase;
 use Illuminate\Http\Request;
-use Illuminate\Cache\RateLimiting\Limit;
 use App\Services\BotVerifier;
 use App\Services\DnsResolverInterface;
 use Illuminate\Support\Facades\Config;
-use Mockery;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class BotVerifierTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function mockRequest(string $ip, string $userAgent): Request
     {
         $request = Request::create('/', 'GET');

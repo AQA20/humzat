@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SaveController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlockController;
 use App\Http\Controllers\MediaController;
@@ -58,5 +59,9 @@ Route::middleware(['api', 'throttle:api'])->group(function () {
         Route::delete('users/{user}/unfollow', [FollowController::class, 'unfollow']);
         Route::get('users/{user}/followers', [FollowController::class, 'followers']);
         Route::get('users/{user}/following', [FollowController::class, 'following']);
+        // Save post endpoints
+        Route::get('/saved-posts', [SaveController::class, 'index']);
+        Route::post('/posts/{post}/save', [SaveController::class, 'save']);
+        Route::delete('/posts/{post}/unsave', [SaveController::class, 'unsave']);
     });
 });
