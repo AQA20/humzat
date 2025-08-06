@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlockController;
 use App\Http\Controllers\MediaController;
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HashtagController;
 use App\Http\Controllers\Auth\LoginController;
@@ -52,5 +53,10 @@ Route::middleware(['api', 'throttle:api'])->group(function () {
         Route::delete('/users/{user}/block', [BlockController::class, 'destroy']);
         // Get blocked users
         Route::get('/users/blocked', [BlockController::class, 'index']);
+        // Follow endpoints
+        Route::post('users/{user}/follow', [FollowController::class, 'follow']);
+        Route::delete('users/{user}/unfollow', [FollowController::class, 'unfollow']);
+        Route::get('users/{user}/followers', [FollowController::class, 'followers']);
+        Route::get('users/{user}/following', [FollowController::class, 'following']);
     });
 });

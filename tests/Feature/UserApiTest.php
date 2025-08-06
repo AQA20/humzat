@@ -22,13 +22,15 @@ class UserApiTest extends TestCase
         $user = User::factory()->create();
 
         $response = $this->getJson("/api/users/{$user->id}");
-
         $response->assertOk()
             ->assertJsonFragment([
                 'id'       => $user->id,
                 'username' => $user->username,
                 'name'     => $user->name,
                 'bio'      => $user->bio,
+                'profile_picture_url' => null,
+                'followers_count' => 0,
+                'following_count' => 0,
             ])
             ->assertJsonMissing(['email']);
     }

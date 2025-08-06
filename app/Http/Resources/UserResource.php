@@ -15,6 +15,8 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'bio' => $this->bio,
             'profile_picture_url' => $this->profile_picture_url,
+            'followers_count' => $this->followers_count,
+            'following_count' => $this->following_count,
             'created_at' => $this->created_at->toIso8601String(),
             'updated_at' => $this->updated_at->toIso8601String(),
             // Only show email if user is viewing their own profile

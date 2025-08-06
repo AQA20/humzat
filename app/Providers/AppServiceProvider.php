@@ -3,12 +3,14 @@
 namespace App\Providers;
 
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use App\Services\BotVerifier;
+use App\Services\PhpDnsResolver;
+use Illuminate\Support\Facades\Route;
+use App\Services\DnsResolverInterface;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
 use Symfony\Component\HttpFoundation\Response;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(DnsResolverInterface::class, PhpDnsResolver::class);
     }
 
     /**
@@ -31,34 +33,17 @@ class AppServiceProvider extends ServiceProvider
             ->group(base_path('routes/api.php'));
 
         RateLimiter::for('api', function (Request $request) {
-            $trustedIps = explode(',', env('TRUSTED_IPS'));
-            if (in_array($request->ip(), $trustedIps)) {
-                return Limit::none();
+            $verifier = app(BotVerifier::class);
+            if ($limit = $verifier->resolveBotOrTrustedLimit($request)) {
+                return $limit;
             }
-
-            $bots = [
-                'googlebot' => '.googlebot.com',
-                'bingbot' => '.search.msn.com',
-                'yandexbot' => '.yandex.ru',
-                'applebot' => '.applebot.apple.com',
-            ];
-
-            $ip = $request->ip();
-            $ua = strtolower($request->userAgent() ?? '');
-            $verifier = new BotVerifier();
-
-            foreach ($bots as $keyword => $domain) {
-                if (str_contains($ua, $keyword) && $verifier->isVerifiedBot($request, $domain)) {
-                    return Limit::perMinute(300)->by($ip);
-                }
-            }
-
-            return $request->user()
-                ? Limit::perMinute(120)->by($request->user()->id)
-                : Limit::perMinute(60)->by($request->ip());
         });
 
         RateLimiter::for('login', function (Request $request) {
+            $verifier = app(BotVerifier::class);
+            if ($limit = $verifier->resolveBotOrTrustedLimit($request)) {
+                return $limit;
+            }
             return Limit::perMinute(5)
                 ->by($request->ip())
                 ->response(function () {
@@ -69,6 +54,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('register', function (Request $request) {
+            $verifier = app(BotVerifier::class);
+            if ($limit = $verifier->resolveBotOrTrustedLimit($request)) {
+                return $limit;
+            }
             return Limit::perHour(3)
                 ->by($request->ip())
                 ->response(function () {
@@ -79,6 +68,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('comment', function (Request $request) {
+            $verifier = app(BotVerifier::class);
+            if ($limit = $verifier->resolveBotOrTrustedLimit($request)) {
+                return $limit;
+            }
             return Limit::perMinute(5)
                 ->by($request->user()->id)
                 ->response(function () {

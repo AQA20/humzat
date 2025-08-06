@@ -25,14 +25,14 @@ endpoints:
         name: user_id
         description: 'The ID of the user.'
         required: true
-        example: 01986af5-a34a-70dd-bd82-0458b50c888d
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      user_id: 01986af5-a34a-70dd-bd82-0458b50c888d
+      user_id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -67,14 +67,14 @@ endpoints:
         name: user_id
         description: 'The ID of the user.'
         required: true
-        example: 01986af5-a34a-70dd-bd82-0458b50c888d
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      user_id: 01986af5-a34a-70dd-bd82-0458b50c888d
+      user_id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

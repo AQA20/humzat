@@ -25,14 +25,14 @@ endpoints:
         name: media_id
         description: 'The ID of the media.'
         required: true
-        example: 01986af5-a270-7075-8ef8-ef75ec51bbf3
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      media_id: 01986af5-a270-7075-8ef8-ef75ec51bbf3
+      media_id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -40,13 +40,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"media":{"id":"01986af5-a270-7075-8ef8-ef75ec51bbf3","name":"media\/images\/70579c87-700f-44d7-9472-62e85b6ee288.png","url":"https:\/\/d1070l6upf61hp.cloudfront.net\/media\/images\/70579c87-700f-44d7-9472-62e85b6ee288.png?Expires=1754144739&Signature=Uad10v6ced3zE2PWbxc13HVsl7hju89nbWkkNR0eH2SCgJkEljcPyZnsPraroUgJ8Wv3saxDH7Dcys9PrEsB~6EKrdAvWdvZMZOdwxuagv4jn77RKIoSslTS2RVOpI1iOwObiG1BtcGlT0DihFxD1G8SikuMaocAs-LjQxpORP-~LBZe2wDM97yLM6-M04eIZmduIzmER9QRPAacpX88IELyGipMZtzkMmMhT2S6emBMSyRlKy5VDVMlPy1nXIsz0gJP7WmNS0yFHI~XOL1zcSC2orjFtQn46SPgMSXTxODJqb-wGaJY67JYXMz-CiA1IQ6W4PAqRhm2Qcs7kfyFGQ__&Key-Pair-Id=K1QD0FFQU2OZI5","type":"image","meta":null,"created_at":"2025-08-02T10:25:39.000000Z","updated_at":"2025-08-02T10:25:39.000000Z"}}'
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Media] consequatur"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '20'
-          x-ratelimit-remaining: '19'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -133,14 +134,14 @@ endpoints:
         name: media_id
         description: 'The ID of the media.'
         required: true
-        example: 01986af5-a270-7075-8ef8-ef75ec51bbf3
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      media_id: 01986af5-a270-7075-8ef8-ef75ec51bbf3
+      media_id: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
