@@ -110,4 +110,14 @@ class User extends Authenticatable
     {
         return $this->following()->count();
     }
+
+    public function savedPosts()
+    {
+        return $this->belongsToMany(
+            Post::class,
+            'post_user_saves',
+            'user_id',
+            'post_id'
+        )->withTimestamps();
+    }
 }

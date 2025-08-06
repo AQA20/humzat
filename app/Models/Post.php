@@ -49,4 +49,14 @@ class Post extends Model
     {
         return $this->hasMany(Media::class);
     }
+
+    public function savedByUsers()
+    {
+        return $this->belongsToMany(
+            User::class,
+            'post_user_saves',
+            'post_id',
+            'user_id'
+        )->withTimestamps();
+    }
 }

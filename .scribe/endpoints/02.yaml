@@ -199,7 +199,7 @@ endpoints:
         name: unique_external_url
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -230,7 +230,7 @@ endpoints:
       body: consequatur
       external_url: 'https://www.mueller.com/laborum-eius-est-dolor-dolores-minus-voluptatem'
       type: AUDIO
-      unique_external_url: false
+      unique_external_url: true
       meta:
         tags:
           - sufvyvddqamniihfqcoyn
