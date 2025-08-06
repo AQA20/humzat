@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Laravel API Documentation</title>
+    <title>humzat API Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -194,6 +194,25 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-user-follow-system" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="user-follow-system">
+                    <a href="#user-follow-system">User Follow System</a>
+                </li>
+                                    <ul id="tocify-subheader-user-follow-system" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="user-follow-system-POSTapi-users--user_id--follow">
+                                <a href="#user-follow-system-POSTapi-users--user_id--follow">Follow a user.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-follow-system-DELETEapi-users--user_id--unfollow">
+                                <a href="#user-follow-system-DELETEapi-users--user_id--unfollow">Unfollow a user.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-follow-system-GETapi-users--user_id--followers">
+                                <a href="#user-follow-system-GETapi-users--user_id--followers">Get followers of a user.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-follow-system-GETapi-users--user_id--following">
+                                <a href="#user-follow-system-GETapi-users--user_id--following">Get users that the user is following.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-user-routes" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="user-routes">
                     <a href="#user-routes">User Routes</a>
@@ -222,7 +241,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 2, 2025</li>
+        <li>Last updated: August 6, 2025</li>
     </ul>
 </div>
 
@@ -731,14 +750,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/block" \
+    "http://humzat.local/api/users/consequatur/block" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/block"
+    "http://humzat.local/api/users/consequatur/block"
 );
 
 const headers = {
@@ -831,10 +850,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="POSTapi-users--user_id--block"
-               value="01986af5-a34a-70dd-bd82-0458b50c888d"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>01986af5-a34a-70dd-bd82-0458b50c888d</code></p>
+<p>The ID of the user. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -851,14 +870,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/block" \
+    "http://humzat.local/api/users/consequatur/block" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/block"
+    "http://humzat.local/api/users/consequatur/block"
 );
 
 const headers = {
@@ -951,10 +970,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="DELETEapi-users--user_id--block"
-               value="01986af5-a34a-70dd-bd82-0458b50c888d"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>01986af5-a34a-70dd-bd82-0458b50c888d</code></p>
+<p>The ID of the user. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -1131,8 +1150,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1289,8 +1306,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1979,94 +1994,21 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: &quot;b936aa0a-9566-42b5-bdca-c0f5648b1421&quot;,
-            &quot;name&quot;: &quot;غزة&quot;,
-            &quot;posts_count&quot;: 3,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:37&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:37&quot;
-        },
-        {
-            &quot;id&quot;: &quot;738a23cf-5a3e-4dcb-b8ad-aed5106cc288&quot;,
-            &quot;name&quot;: &quot;الأمم المتحدة&quot;,
-            &quot;posts_count&quot;: 2,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:37&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:37&quot;
-        },
-        {
-            &quot;id&quot;: &quot;4c2b2ad0-9d5c-41b4-9755-8f2e6ac8b073&quot;,
-            &quot;name&quot;: &quot;المساعدات الإنسانية&quot;,
-            &quot;posts_count&quot;: 2,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:37&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:37&quot;
-        },
-        {
-            &quot;id&quot;: &quot;9e031b34-985c-42d0-9b19-8265fdee0f1b&quot;,
-            &quot;name&quot;: &quot;دونالد ترمب&quot;,
-            &quot;posts_count&quot;: 2,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:44&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:44&quot;
-        },
-        {
-            &quot;id&quot;: &quot;c5fec62b-f55a-4e82-a502-f6f87bb5eafe&quot;,
-            &quot;name&quot;: &quot;غواصات نووية&quot;,
-            &quot;posts_count&quot;: 2,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:44&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:44&quot;
-        },
-        {
-            &quot;id&quot;: &quot;8840b0c8-cf25-424e-9402-2fbcb8be7620&quot;,
-            &quot;name&quot;: &quot;السياسة الأمريكية&quot;,
-            &quot;posts_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:40&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:40&quot;
-        },
-        {
-            &quot;id&quot;: &quot;aa1b491b-b50b-4dd6-b065-a0a0dcb85846&quot;,
-            &quot;name&quot;: &quot;دونالد ترامب&quot;,
-            &quot;posts_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:40&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:40&quot;
-        },
-        {
-            &quot;id&quot;: &quot;a6bfd5d9-bcc3-4951-aba5-311153948537&quot;,
-            &quot;name&quot;: &quot;روسيا&quot;,
-            &quot;posts_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:44&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:44&quot;
-        },
-        {
-            &quot;id&quot;: &quot;108b9604-fa5c-4101-b853-79e795f0e0a0&quot;,
-            &quot;name&quot;: &quot;التوتر الأمريكي الروسي&quot;,
-            &quot;posts_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:53&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:53&quot;
-        },
-        {
-            &quot;id&quot;: &quot;d3b55a14-da32-4d28-95b2-0e88d165a37f&quot;,
-            &quot;name&quot;: &quot;أزمة إنسانية&quot;,
-            &quot;posts_count&quot;: 1,
-            &quot;created_at&quot;: &quot;2025-08-02 13:25:47&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02 13:25:47&quot;
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://humzat.local/api/hashtags?page=1&quot;,
-        &quot;last&quot;: &quot;http://humzat.local/api/hashtags?page=2&quot;,
+        &quot;last&quot;: &quot;http://humzat.local/api/hashtags?page=1&quot;,
         &quot;prev&quot;: null,
-        &quot;next&quot;: &quot;http://humzat.local/api/hashtags?page=2&quot;
+        &quot;next&quot;: null
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 2,
+        &quot;from&quot;: null,
+        &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
                 &quot;url&quot;: null,
@@ -2079,20 +2021,15 @@ access-control-allow-origin: *
                 &quot;active&quot;: true
             },
             {
-                &quot;url&quot;: &quot;http://humzat.local/api/hashtags?page=2&quot;,
-                &quot;label&quot;: &quot;2&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://humzat.local/api/hashtags?page=2&quot;,
+                &quot;url&quot;: null,
                 &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
                 &quot;active&quot;: false
             }
         ],
         &quot;path&quot;: &quot;http://humzat.local/api/hashtags&quot;,
         &quot;per_page&quot;: 10,
-        &quot;to&quot;: 10,
-        &quot;total&quot;: 12
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     }
 }</code>
  </pre>
@@ -2181,14 +2118,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://humzat.local/api/hashtags/b936aa0a-9566-42b5-bdca-c0f5648b1421" \
+    --get "http://humzat.local/api/hashtags/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/hashtags/b936aa0a-9566-42b5-bdca-c0f5648b1421"
+    "http://humzat.local/api/hashtags/consequatur"
 );
 
 const headers = {
@@ -2205,7 +2142,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-hashtags--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2213,177 +2150,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;hashtag&quot;: {
-        &quot;id&quot;: &quot;b936aa0a-9566-42b5-bdca-c0f5648b1421&quot;,
-        &quot;name&quot;: &quot;غزة&quot;,
-        &quot;created_at&quot;: &quot;2025-08-02 13:25:37&quot;,
-        &quot;updated_at&quot;: &quot;2025-08-02 13:25:37&quot;
-    },
-    &quot;posts&quot;: {
-        &quot;data&quot;: [
-            {
-                &quot;id&quot;: &quot;01986af5-cc6b-73d9-a317-afd5efeb38ec&quot;,
-                &quot;user_id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-                &quot;body&quot;: &quot;الأمم المتحدة توثّق بالفيديو استهداف مدنيين في طوابير المساعدات بغزة\nأظهر مقطع فيديو وثّقه فريق تابع للأمم المتحدة في قطاع غزة، لحظة إطلاق نار مباشر على عشرات المدنيين الفلسطينيين، أثناء تجمعهم قرب أحد مراكز توزيع المساعدات الإنسانية.&quot;,
-                &quot;external_url&quot;: &quot;https://www.skynewsarabia.com/middle-east/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9&quot;,
-                &quot;meta&quot;: {
-                    &quot;tags&quot;: [
-                        &quot;غزة&quot;,
-                        &quot;الأمم المتحدة&quot;,
-                        &quot;المساعدات الإنسانية&quot;
-                    ]
-                },
-                &quot;hashtags&quot;: [
-                    &quot;غزة&quot;,
-                    &quot;الأمم المتحدة&quot;,
-                    &quot;المساعدات الإنسانية&quot;
-                ],
-                &quot;media&quot;: [
-                    {
-                        &quot;id&quot;: &quot;01986af5-d42a-7282-b61d-8983be424496&quot;,
-                        &quot;name&quot;: &quot;media/images/3d6f66a6-92c8-4264-9cc7-0ee9132f4821.png&quot;,
-                        &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/3d6f66a6-92c8-4264-9cc7-0ee9132f4821.png?Expires=1754144752&amp;Signature=cuY6-ULS6UnJXDElOgJu0eqPO7ve~9R7a8SGDOReSgZIyG6myTxjU6GNVI9e8BaVFoNVvEBFRm9BqqgRLcCMSD~Z~JUk33xZhTdvZnl4u6oA3o7tq75a29ehgBZ2Jy5cUPoOgF2b1skG2U8VaRUfoPO0zgbBTnKFaj1Obfm1p5DV-azLnLxSqFfazInfX6M5TdhM1wBUoGBgRFtlUTRTr~Tk-dNTtnlnPgBwEfuCz0HAQlULiHTgtUz~jpNgybxHMb2L~47kaeBDJnN21s2pfjhex2HXjjA8A~WbWwuV1i5y0peYEguX-O9eEILaHQ8O56WOPCnq6pOLitd6B7IQ3A__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                        &quot;type&quot;: &quot;image&quot;,
-                        &quot;meta&quot;: null,
-                        &quot;created_at&quot;: &quot;2025-08-02T10:25:52.000000Z&quot;,
-                        &quot;updated_at&quot;: &quot;2025-08-02T10:25:52.000000Z&quot;
-                    }
-                ],
-                &quot;type&quot;: &quot;IMAGE&quot;,
-                &quot;user&quot;: {
-                    &quot;id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-                    &quot;username&quot;: &quot;skynewsarabia&quot;,
-                    &quot;name&quot;: null,
-                    &quot;bio&quot;: null,
-                    &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;created_at&quot;: &quot;2025-08-02T13:25:36+03:00&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T13:25:50+03:00&quot;
-                },
-                &quot;created_at&quot;: &quot;2025-08-02T10:25:50.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T10:25:50.000000Z&quot;
-            },
-            {
-                &quot;id&quot;: &quot;01986af5-bfc1-7347-a819-c07019e0277b&quot;,
-                &quot;user_id&quot;: &quot;01986af5-bc06-713f-9b2a-c6c69c0a752b&quot;,
-                &quot;body&quot;: &quot;طبيب بريطاني يكشف: أطفال غزة يسدون جوعهم بالماء والملح\nكشف الجراح البريطاني غرايم غروم، عقب عودته من مهمة إنسانية في قطاع غزة، عن مشاهد مروعة لمعاناة الأطفال من الجوع. وأوضح غروم أن الصغار يلجؤون إلى شرب الماء المالح للشعور بالشبع ومحاولة النوم، في شهادة صادمة تسلط الضوء على تفاقم الأزمة الإنسانية المفتعلة في القطاع.&quot;,
-                &quot;external_url&quot;: &quot;https://www.aljazeera.net/news/2025/8/2/%D8%B7%D8%A8%D9%8A%D8%A8-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%85%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D9%85%D9%84%D8%AD-%D9%82%D9%88%D8%AA-%D8%A3%D8%B7%D9%81%D8%A7%D9%84&quot;,
-                &quot;meta&quot;: {
-                    &quot;tags&quot;: [
-                        &quot;غزة&quot;,
-                        &quot;أزمة إنسانية&quot;,
-                        &quot;أطفال غزة&quot;
-                    ]
-                },
-                &quot;hashtags&quot;: [
-                    &quot;غزة&quot;,
-                    &quot;أزمة إنسانية&quot;,
-                    &quot;أطفال غزة&quot;
-                ],
-                &quot;media&quot;: [
-                    {
-                        &quot;id&quot;: &quot;01986af5-c74f-7364-9b94-6de95778e7d8&quot;,
-                        &quot;name&quot;: &quot;media/images/5bc242e0-a608-4298-96aa-4ac28e29e2e2.jpg&quot;,
-                        &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/5bc242e0-a608-4298-96aa-4ac28e29e2e2.jpg?Expires=1754144749&amp;Signature=U5YJ7O0gMjk4l1pvJaAb59DRTL-lgslqj0Mt9jfcWsz8~148GNusGRTh-NXHo2I759pPCATSuv2Ve3jpCsQBy1bF1yPFEnHf1D~y03gJwt~diJedfxU9aDh8GA9evrpm48LTZYRfGClIXqgrfsZSEZrkggntN5mu4QcBZHOPrtKnAbfZAKXMc6I1SdMKAGx1DVz0xbzM3jwBvffG9QvZeT-WL2KSZs2HFlisG7ObCF65iUA5ykSCfbOrBUnPMErLlb0R68ZY3u0oMuM4Y8~WZmZd8KLY2LSYc2mmuu6-XsEIXAnuVbt3TAECUfEsRao~skxaWR07HMsPFhN3~vF6ag__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                        &quot;type&quot;: &quot;image&quot;,
-                        &quot;meta&quot;: null,
-                        &quot;created_at&quot;: &quot;2025-08-02T10:25:49.000000Z&quot;,
-                        &quot;updated_at&quot;: &quot;2025-08-02T10:25:49.000000Z&quot;
-                    }
-                ],
-                &quot;type&quot;: &quot;IMAGE&quot;,
-                &quot;user&quot;: {
-                    &quot;id&quot;: &quot;01986af5-bc06-713f-9b2a-c6c69c0a752b&quot;,
-                    &quot;username&quot;: &quot;aljazeera&quot;,
-                    &quot;name&quot;: null,
-                    &quot;bio&quot;: null,
-                    &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/61c954b7-54c9-43c5-8fd8-e6ee11022002.net&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=TfcVsFihtz9qaxBupliIfmbPn5oRZBEpK06F9yFhE-nxWOzdgtC45zgT5jHbFFcw85AzIxfv5xcflAF5l-brmaMa7102QBK2ZS4RM7hG-crdR8jaImO7YTempNzY2kOtrYEgVBpaKt-xiHhUVdHcVeUriRPLqdAPgjE4wDWZtkskejLaCw~2vjluKshKcSv-9t9HyUES~SQ56aVVvppcizCSeb5qzUul9qDjm1XySQXNYtdSR1ZZS5GDBM2-RjycqR3LL99rdK8JSVou3U-ZcIPsYGFpwOCwbe8VLLJ2AUi5WVMcELuJyxAGDPlSiuM-UBAYt1jLVg3zlkdPRlUo7w__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;created_at&quot;: &quot;2025-08-02T13:25:46+03:00&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T13:25:47+03:00&quot;
-                },
-                &quot;created_at&quot;: &quot;2025-08-02T10:25:47.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T10:25:47.000000Z&quot;
-            },
-            {
-                &quot;id&quot;: &quot;01986af5-9a1d-705d-a854-50fe75e1578c&quot;,
-                &quot;user_id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-                &quot;body&quot;: &quot;الأمم المتحدة توثّق استهداف منتظري المساعدات في غزة بإطلاق نار حي\nفي واقعة مروعة، وثّق فريق أممي في قطاع غزة لحظة إطلاق نار حي على حشد من المدنيين الفلسطينيين كانوا ينتظرون دورهم لاستلام مساعدات إنسانية بالقرب من أحد مراكز التوزيع.&quot;,
-                &quot;external_url&quot;: &quot;https://www.skynewsarabia.com/middle-east/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9&quot;,
-                &quot;meta&quot;: {
-                    &quot;tags&quot;: [
-                        &quot;غزة&quot;,
-                        &quot;الأمم المتحدة&quot;,
-                        &quot;المساعدات الإنسانية&quot;
-                    ]
-                },
-                &quot;hashtags&quot;: [
-                    &quot;غزة&quot;,
-                    &quot;الأمم المتحدة&quot;,
-                    &quot;المساعدات الإنسانية&quot;
-                ],
-                &quot;media&quot;: [
-                    {
-                        &quot;id&quot;: &quot;01986af5-a270-7075-8ef8-ef75ec51bbf3&quot;,
-                        &quot;name&quot;: &quot;media/images/70579c87-700f-44d7-9472-62e85b6ee288.png&quot;,
-                        &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/70579c87-700f-44d7-9472-62e85b6ee288.png?Expires=1754144739&amp;Signature=Uad10v6ced3zE2PWbxc13HVsl7hju89nbWkkNR0eH2SCgJkEljcPyZnsPraroUgJ8Wv3saxDH7Dcys9PrEsB~6EKrdAvWdvZMZOdwxuagv4jn77RKIoSslTS2RVOpI1iOwObiG1BtcGlT0DihFxD1G8SikuMaocAs-LjQxpORP-~LBZe2wDM97yLM6-M04eIZmduIzmER9QRPAacpX88IELyGipMZtzkMmMhT2S6emBMSyRlKy5VDVMlPy1nXIsz0gJP7WmNS0yFHI~XOL1zcSC2orjFtQn46SPgMSXTxODJqb-wGaJY67JYXMz-CiA1IQ6W4PAqRhm2Qcs7kfyFGQ__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                        &quot;type&quot;: &quot;image&quot;,
-                        &quot;meta&quot;: null,
-                        &quot;created_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;,
-                        &quot;updated_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;
-                    }
-                ],
-                &quot;type&quot;: &quot;IMAGE&quot;,
-                &quot;user&quot;: {
-                    &quot;id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-                    &quot;username&quot;: &quot;skynewsarabia&quot;,
-                    &quot;name&quot;: null,
-                    &quot;bio&quot;: null,
-                    &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;created_at&quot;: &quot;2025-08-02T13:25:36+03:00&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T13:25:50+03:00&quot;
-                },
-                &quot;created_at&quot;: &quot;2025-08-02T10:25:37.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T10:25:37.000000Z&quot;
-            }
-        ],
-        &quot;links&quot;: {
-            &quot;first&quot;: &quot;http://humzat.local/api/hashtags/b936aa0a-9566-42b5-bdca-c0f5648b1421?page=1&quot;,
-            &quot;last&quot;: &quot;http://humzat.local/api/hashtags/b936aa0a-9566-42b5-bdca-c0f5648b1421?page=1&quot;,
-            &quot;prev&quot;: null,
-            &quot;next&quot;: null
-        },
-        &quot;meta&quot;: {
-            &quot;current_page&quot;: 1,
-            &quot;from&quot;: 1,
-            &quot;last_page&quot;: 1,
-            &quot;links&quot;: [
-                {
-                    &quot;url&quot;: null,
-                    &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                    &quot;active&quot;: false
-                },
-                {
-                    &quot;url&quot;: &quot;http://humzat.local/api/hashtags/b936aa0a-9566-42b5-bdca-c0f5648b1421?page=1&quot;,
-                    &quot;label&quot;: &quot;1&quot;,
-                    &quot;active&quot;: true
-                },
-                {
-                    &quot;url&quot;: null,
-                    &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                    &quot;active&quot;: false
-                }
-            ],
-            &quot;path&quot;: &quot;http://humzat.local/api/hashtags/b936aa0a-9566-42b5-bdca-c0f5648b1421&quot;,
-            &quot;per_page&quot;: 10,
-            &quot;to&quot;: 3,
-            &quot;total&quot;: 3
-        }
-    }
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Hashtag] consequatur&quot;
 }</code>
  </pre>
     </span>
@@ -2463,10 +2234,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-hashtags--id-"
-               value="b936aa0a-9566-42b5-bdca-c0f5648b1421"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the hashtag. Example: <code>b936aa0a-9566-42b5-bdca-c0f5648b1421</code></p>
+<p>The ID of the hashtag. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -2515,8 +2286,6 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -2625,14 +2394,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://humzat.local/api/media/01986af5-a270-7075-8ef8-ef75ec51bbf3" \
+    --get "http://humzat.local/api/media/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/media/01986af5-a270-7075-8ef8-ef75ec51bbf3"
+    "http://humzat.local/api/media/consequatur"
 );
 
 const headers = {
@@ -2649,7 +2418,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-media--media_id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2657,21 +2426,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;media&quot;: {
-        &quot;id&quot;: &quot;01986af5-a270-7075-8ef8-ef75ec51bbf3&quot;,
-        &quot;name&quot;: &quot;media/images/70579c87-700f-44d7-9472-62e85b6ee288.png&quot;,
-        &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/70579c87-700f-44d7-9472-62e85b6ee288.png?Expires=1754144739&amp;Signature=Uad10v6ced3zE2PWbxc13HVsl7hju89nbWkkNR0eH2SCgJkEljcPyZnsPraroUgJ8Wv3saxDH7Dcys9PrEsB~6EKrdAvWdvZMZOdwxuagv4jn77RKIoSslTS2RVOpI1iOwObiG1BtcGlT0DihFxD1G8SikuMaocAs-LjQxpORP-~LBZe2wDM97yLM6-M04eIZmduIzmER9QRPAacpX88IELyGipMZtzkMmMhT2S6emBMSyRlKy5VDVMlPy1nXIsz0gJP7WmNS0yFHI~XOL1zcSC2orjFtQn46SPgMSXTxODJqb-wGaJY67JYXMz-CiA1IQ6W4PAqRhm2Qcs7kfyFGQ__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-        &quot;type&quot;: &quot;image&quot;,
-        &quot;meta&quot;: null,
-        &quot;created_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;
-    }
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Media] consequatur&quot;
 }</code>
  </pre>
     </span>
@@ -2751,10 +2510,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="media_id"                data-endpoint="GETapi-media--media_id-"
-               value="01986af5-a270-7075-8ef8-ef75ec51bbf3"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the media. Example: <code>01986af5-a270-7075-8ef8-ef75ec51bbf3</code></p>
+<p>The ID of the media. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -2775,7 +2534,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "post_id=66529e01-d113-3473-8d6f-9e11e09332ea"\
-    --form "image=@/tmp/phpXduf6V" </code></pre></div>
+    --form "image=@/tmp/php0Lwdpd" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2881,7 +2640,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 5120 kilobytes. Example: <code>/tmp/phpXduf6V</code></p>
+<p>Must be an image. Must not be greater than 5120 kilobytes. Example: <code>/tmp/php0Lwdpd</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>post_id</code></b>&nbsp;&nbsp;
@@ -2910,14 +2669,14 @@ then deletes the media file from storage and removes the database record.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://humzat.local/api/media/01986af5-a270-7075-8ef8-ef75ec51bbf3" \
+    "http://humzat.local/api/media/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/media/01986af5-a270-7075-8ef8-ef75ec51bbf3"
+    "http://humzat.local/api/media/consequatur"
 );
 
 const headers = {
@@ -3010,10 +2769,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="media_id"                data-endpoint="DELETEapi-media--media_id-"
-               value="01986af5-a270-7075-8ef8-ef75ec51bbf3"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the media. Example: <code>01986af5-a270-7075-8ef8-ef75ec51bbf3</code></p>
+<p>The ID of the media. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -3066,266 +2825,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: &quot;01986af5-d8f8-71c4-9df0-aac7483b6d84&quot;,
-            &quot;user_id&quot;: &quot;01986af5-afcf-7280-aeba-60a6b2dd6102&quot;,
-            &quot;body&quot;: &quot;تصعيد في المواجهة مع روسيا: ترمب يأمر بنشر غواصات نووية\nفي خطوة تصعيدية ترفع منسوب التوتر مع موسكو، أعلن الرئيس الأمريكي دونالد ترمب عن نيته إصدار أوامر بنشر غواصتين نوويتين في مناطق استراتيجية، ردًا على ما اعتبرها استفزازات روسية.&quot;,
-            &quot;external_url&quot;: &quot;https://aawsat.com/%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85/%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9%E2%80%8B/5171018-%D8%B6%D8%BA%D9%88%D8%B7-%D8%B9%D9%84%D9%89-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%88%D8%AA%D8%AD%D8%B1%D9%8A%D9%83-%D9%84%D9%80%D8%BA%D9%88%D8%A7%D8%B5%D8%A7%D8%AA-%D9%86%D9%88%D9%88%D9%8A%D8%A9-%D9%85%D8%A7%D8%B0%D8%A7-%D9%88%D8%B1%D8%A7%D8%A1-%D8%AA%D8%AD%D8%B0%D9%8A%D8%B1-%D8%AA%D8%B1%D9%85%D8%A8-%D8%A7%D9%84%D9%85%D8%B2%D8%AF%D9%88%D8%AC%D8%9F&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;دونالد ترمب&quot;,
-                    &quot;غواصات نووية&quot;,
-                    &quot;التوتر الأمريكي الروسي&quot;
-                ]
-            },
-            &quot;hashtags&quot;: [
-                &quot;دونالد ترمب&quot;,
-                &quot;غواصات نووية&quot;,
-                &quot;التوتر الأمريكي الروسي&quot;
-            ],
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-df86-71cd-8ae7-97d823b84a95&quot;,
-                    &quot;name&quot;: &quot;media/images/24749a90-041a-45ce-bd1a-e806d90fb9c3.webp&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/24749a90-041a-45ce-bd1a-e806d90fb9c3.webp?Expires=1754144755&amp;Signature=DyLXF1H1G1h00yS08zzQ9JimeZWPRF5F2kD2w2X9~vXwgnpizC4SUpvTSvAHoRZiQb2Upuf0s4dn53LIgMiIwgsJpHS7CwaTprxO6G4oIRqJ9tRH2eq97oqiJEezgpLvoCA1p-70vPUitIpN35CL14YjNE1nqpoebEZFIhA8h9ZUqcZjHecZk~AtD9YZGGC7KU22yZOgbn8RF4srV4PB9AdIZdaUi7ABq0kYijv116Jsk1COtAuaofUsMK4KCEd15f7kOjF7xdDILFTTprlmM4BREXfZ-QUCZBxLsSPAO1LKh5tf3iTarp2JnV1ZKlN0d1fKicXpNLZ66BmEehGD1g__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:55.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:55.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: &quot;01986af5-afcf-7280-aeba-60a6b2dd6102&quot;,
-                &quot;username&quot;: &quot;aawsat&quot;,
-                &quot;name&quot;: null,
-                &quot;bio&quot;: null,
-                &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/cc247977-2bc2-4b16-a465-cc5941458f1f.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=Eme0DVSXqmcfUtL8VG7SOOvKGdukzmaL8WLhIIR99pWp8bKoevwBGM9S~Z~IXyUc1xicASVdbRfV6S3kz1lMz~~TIuYY8LHn0feysdd~6bx5mCHsGubb1dtp3RfcjB7DO2bu~qEJ2oChIm-jzvhJ0ZFkTmbIa3ah7eJbyOLcEPBUZu0~9PhLC86TR~3QW8~O4RhkFmNxE~sIu8-M2TRyjZr6i1AsH2iIZCRLT~9Aqqps7vTO7ZrVrYEmG8wopQHSpaE1AlSi0ue-YLyWKU4fAvZHrRoqdGxCV9SRXgdOyCnVDoGWWe5kBuEJW-pi8Yq7ETE0p4ADrJHO3N5nTF4d7A__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;created_at&quot;: &quot;2025-08-02T13:25:42+03:00&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T13:25:53+03:00&quot;
-            },
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:53.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: &quot;01986af5-cc6b-73d9-a317-afd5efeb38ec&quot;,
-            &quot;user_id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-            &quot;body&quot;: &quot;الأمم المتحدة توثّق بالفيديو استهداف مدنيين في طوابير المساعدات بغزة\nأظهر مقطع فيديو وثّقه فريق تابع للأمم المتحدة في قطاع غزة، لحظة إطلاق نار مباشر على عشرات المدنيين الفلسطينيين، أثناء تجمعهم قرب أحد مراكز توزيع المساعدات الإنسانية.&quot;,
-            &quot;external_url&quot;: &quot;https://www.skynewsarabia.com/middle-east/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;غزة&quot;,
-                    &quot;الأمم المتحدة&quot;,
-                    &quot;المساعدات الإنسانية&quot;
-                ]
-            },
-            &quot;hashtags&quot;: [
-                &quot;غزة&quot;,
-                &quot;الأمم المتحدة&quot;,
-                &quot;المساعدات الإنسانية&quot;
-            ],
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-d42a-7282-b61d-8983be424496&quot;,
-                    &quot;name&quot;: &quot;media/images/3d6f66a6-92c8-4264-9cc7-0ee9132f4821.png&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/3d6f66a6-92c8-4264-9cc7-0ee9132f4821.png?Expires=1754144752&amp;Signature=cuY6-ULS6UnJXDElOgJu0eqPO7ve~9R7a8SGDOReSgZIyG6myTxjU6GNVI9e8BaVFoNVvEBFRm9BqqgRLcCMSD~Z~JUk33xZhTdvZnl4u6oA3o7tq75a29ehgBZ2Jy5cUPoOgF2b1skG2U8VaRUfoPO0zgbBTnKFaj1Obfm1p5DV-azLnLxSqFfazInfX6M5TdhM1wBUoGBgRFtlUTRTr~Tk-dNTtnlnPgBwEfuCz0HAQlULiHTgtUz~jpNgybxHMb2L~47kaeBDJnN21s2pfjhex2HXjjA8A~WbWwuV1i5y0peYEguX-O9eEILaHQ8O56WOPCnq6pOLitd6B7IQ3A__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:52.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:52.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-                &quot;username&quot;: &quot;skynewsarabia&quot;,
-                &quot;name&quot;: null,
-                &quot;bio&quot;: null,
-                &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;created_at&quot;: &quot;2025-08-02T13:25:36+03:00&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T13:25:50+03:00&quot;
-            },
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:50.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:50.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: &quot;01986af5-bfc1-7347-a819-c07019e0277b&quot;,
-            &quot;user_id&quot;: &quot;01986af5-bc06-713f-9b2a-c6c69c0a752b&quot;,
-            &quot;body&quot;: &quot;طبيب بريطاني يكشف: أطفال غزة يسدون جوعهم بالماء والملح\nكشف الجراح البريطاني غرايم غروم، عقب عودته من مهمة إنسانية في قطاع غزة، عن مشاهد مروعة لمعاناة الأطفال من الجوع. وأوضح غروم أن الصغار يلجؤون إلى شرب الماء المالح للشعور بالشبع ومحاولة النوم، في شهادة صادمة تسلط الضوء على تفاقم الأزمة الإنسانية المفتعلة في القطاع.&quot;,
-            &quot;external_url&quot;: &quot;https://www.aljazeera.net/news/2025/8/2/%D8%B7%D8%A8%D9%8A%D8%A8-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%85%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D9%85%D9%84%D8%AD-%D9%82%D9%88%D8%AA-%D8%A3%D8%B7%D9%81%D8%A7%D9%84&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;غزة&quot;,
-                    &quot;أزمة إنسانية&quot;,
-                    &quot;أطفال غزة&quot;
-                ]
-            },
-            &quot;hashtags&quot;: [
-                &quot;غزة&quot;,
-                &quot;أزمة إنسانية&quot;,
-                &quot;أطفال غزة&quot;
-            ],
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-c74f-7364-9b94-6de95778e7d8&quot;,
-                    &quot;name&quot;: &quot;media/images/5bc242e0-a608-4298-96aa-4ac28e29e2e2.jpg&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/5bc242e0-a608-4298-96aa-4ac28e29e2e2.jpg?Expires=1754144749&amp;Signature=U5YJ7O0gMjk4l1pvJaAb59DRTL-lgslqj0Mt9jfcWsz8~148GNusGRTh-NXHo2I759pPCATSuv2Ve3jpCsQBy1bF1yPFEnHf1D~y03gJwt~diJedfxU9aDh8GA9evrpm48LTZYRfGClIXqgrfsZSEZrkggntN5mu4QcBZHOPrtKnAbfZAKXMc6I1SdMKAGx1DVz0xbzM3jwBvffG9QvZeT-WL2KSZs2HFlisG7ObCF65iUA5ykSCfbOrBUnPMErLlb0R68ZY3u0oMuM4Y8~WZmZd8KLY2LSYc2mmuu6-XsEIXAnuVbt3TAECUfEsRao~skxaWR07HMsPFhN3~vF6ag__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:49.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:49.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: &quot;01986af5-bc06-713f-9b2a-c6c69c0a752b&quot;,
-                &quot;username&quot;: &quot;aljazeera&quot;,
-                &quot;name&quot;: null,
-                &quot;bio&quot;: null,
-                &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/61c954b7-54c9-43c5-8fd8-e6ee11022002.net&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=TfcVsFihtz9qaxBupliIfmbPn5oRZBEpK06F9yFhE-nxWOzdgtC45zgT5jHbFFcw85AzIxfv5xcflAF5l-brmaMa7102QBK2ZS4RM7hG-crdR8jaImO7YTempNzY2kOtrYEgVBpaKt-xiHhUVdHcVeUriRPLqdAPgjE4wDWZtkskejLaCw~2vjluKshKcSv-9t9HyUES~SQ56aVVvppcizCSeb5qzUul9qDjm1XySQXNYtdSR1ZZS5GDBM2-RjycqR3LL99rdK8JSVou3U-ZcIPsYGFpwOCwbe8VLLJ2AUi5WVMcELuJyxAGDPlSiuM-UBAYt1jLVg3zlkdPRlUo7w__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;created_at&quot;: &quot;2025-08-02T13:25:46+03:00&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T13:25:47+03:00&quot;
-            },
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:47.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:47.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: &quot;01986af5-b437-714e-9cf9-71beeb65400b&quot;,
-            &quot;user_id&quot;: &quot;01986af5-afcf-7280-aeba-60a6b2dd6102&quot;,
-            &quot;body&quot;: &quot;تصعيدًا للتوتر مع روسيا.. ترمب يأمر بنشر غواصات نووية\nفي خطوة تصعيدية، أعلن الرئيس الأمريكي دونالد ترمب عن قراره بإرسال غواصتين نوويتين إلى مناطق استراتيجية، وذلك في سياق الرد على ما اعتبرها استفزازات من موسكو، مما يرفع من حدة المواجهة بين القوتين.&quot;,
-            &quot;external_url&quot;: &quot;https://aawsat.com/%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85/%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9%E2%80%8B/5171018-%D8%B6%D8%BA%D9%88%D8%B7-%D8%B9%D9%84%D9%89-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%88%D8%AA%D8%AD%D8%B1%D9%8A%D9%83-%D9%84%D9%80%D8%BA%D9%88%D8%A7%D8%B5%D8%A7%D8%AA-%D9%86%D9%88%D9%88%D9%8A%D8%A9-%D9%85%D8%A7%D8%B0%D8%A7-%D9%88%D8%B1%D8%A7%D8%A1-%D8%AA%D8%AD%D8%B0%D9%8A%D8%B1-%D8%AA%D8%B1%D9%85%D8%A8-%D8%A7%D9%84%D9%85%D8%B2%D8%AF%D9%88%D8%AC%D8%9F&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;دونالد ترمب&quot;,
-                    &quot;روسيا&quot;,
-                    &quot;غواصات نووية&quot;
-                ]
-            },
-            &quot;hashtags&quot;: [
-                &quot;دونالد ترمب&quot;,
-                &quot;روسيا&quot;,
-                &quot;غواصات نووية&quot;
-            ],
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-bb27-70a4-87ff-0f0d50f7610d&quot;,
-                    &quot;name&quot;: &quot;media/images/11868192-67c3-42cf-a2a5-3ef9eb0c9a92.webp&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/11868192-67c3-42cf-a2a5-3ef9eb0c9a92.webp?Expires=1754144745&amp;Signature=YTM9ofWMBRL6FmEshntDJc4RIka2H4B8cEsfQLbE6vdSJ0X3MNxhGVi-OZgAUD1BcTdu6H6fbV~C9dSMKS2XijftxV0s0La-znIZmj1oxhgUAFiyyMaLtVyfM9Uy3I0JRm9eIlQlmlS7-aVfRRlMavtjT6-Y8jVdvCZWGgZpCPzzfBESQyJtP-EzPkEEIgxbSVfVittt7phZ7w9pVWhpjaP~xE-kMyxtCaz-ErqzuVvCAB03wkPSdU7NjAo2pLUcxBOaHSwQ-2-Ax9cT4kJaHj-77vs5h8SvYL8SuSQqQTptwvY1~pkBz1Fj8l2XceV8MwE6K4A0cKaSZr68oSaitg__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:45.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:45.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: &quot;01986af5-afcf-7280-aeba-60a6b2dd6102&quot;,
-                &quot;username&quot;: &quot;aawsat&quot;,
-                &quot;name&quot;: null,
-                &quot;bio&quot;: null,
-                &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/cc247977-2bc2-4b16-a465-cc5941458f1f.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=Eme0DVSXqmcfUtL8VG7SOOvKGdukzmaL8WLhIIR99pWp8bKoevwBGM9S~Z~IXyUc1xicASVdbRfV6S3kz1lMz~~TIuYY8LHn0feysdd~6bx5mCHsGubb1dtp3RfcjB7DO2bu~qEJ2oChIm-jzvhJ0ZFkTmbIa3ah7eJbyOLcEPBUZu0~9PhLC86TR~3QW8~O4RhkFmNxE~sIu8-M2TRyjZr6i1AsH2iIZCRLT~9Aqqps7vTO7ZrVrYEmG8wopQHSpaE1AlSi0ue-YLyWKU4fAvZHrRoqdGxCV9SRXgdOyCnVDoGWWe5kBuEJW-pi8Yq7ETE0p4ADrJHO3N5nTF4d7A__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;created_at&quot;: &quot;2025-08-02T13:25:42+03:00&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T13:25:53+03:00&quot;
-            },
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:44.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:44.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: &quot;01986af5-a7f4-7027-8c69-63e1d53b8adf&quot;,
-            &quot;user_id&quot;: &quot;01986af5-a34a-70dd-bd82-0458b50c888d&quot;,
-            &quot;body&quot;: &quot;ترامب يكشف تفاصيل زيارة مبعوثه لمركز مساعدات أمريكي في غزة\nأعلن الرئيس الأمريكي دونالد ترامب، يوم الجمعة، عن تفاصيل زيارة قام بها مبعوثه للشرق الأوسط، ستيف ويتكوف، إلى قطاع غزة. وأوضح ترامب أن ويتكوف تفقد موقعًا لتوزيع المساعدات تشرف عليه مؤسسة \&quot;غزة الإنسانية\&quot;، وهي منظمة مثيرة للجدل تتلقى دعمًا من الولايات المتحدة.&quot;,
-            &quot;external_url&quot;: &quot;https://arabic.cnn.com/middle-east/article/2025/08/02/trump-says-he-spoke-with-witkoff-after-his-trip-to-gaza&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;دونالد ترامب&quot;,
-                    &quot;قطاع غزة&quot;,
-                    &quot;السياسة الأمريكية&quot;
-                ]
-            },
-            &quot;hashtags&quot;: [
-                &quot;دونالد ترامب&quot;,
-                &quot;قطاع غزة&quot;,
-                &quot;السياسة الأمريكية&quot;
-            ],
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-ae72-715c-9ffc-531774730ae5&quot;,
-                    &quot;name&quot;: &quot;media/images/b7715a11-14b3-4033-ae69-4b000e2617cd.jpg&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/b7715a11-14b3-4033-ae69-4b000e2617cd.jpg?Expires=1754144742&amp;Signature=cz-pghpaGQFC8AJ5Rn20reEbSlboJ1vMuGgbdPl4VGAMYrjjrFSyCiBk8Kd8MwnmBvaO60QM4XSm7YQHIPYkOt2gzjOTXc6SB68rDRp66GlSNxynHHeHOUOQV64jXhAcrayFkieKcYvd~laM7bwiw~j0CnLGLM-0yLvC4K-GuvfkyjThKw9bv6UeHDp~Es5lfdZAZaZ2ASqXAQ22x-UAVc~fwamRM5eCI4Oji6hYmP4f9K6YTMfJD4wGIgW9mBjCfJNtB2JiMeywwq~7FfrW2HTcc5fhevg0n6DYaIcOMJb72dAGBvCaipZwjfJjPR74VVNaq8iKckAKckeInQrA5A__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:42.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:42.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: &quot;01986af5-a34a-70dd-bd82-0458b50c888d&quot;,
-                &quot;username&quot;: &quot;cnn&quot;,
-                &quot;name&quot;: null,
-                &quot;bio&quot;: null,
-                &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/25c6e293-bf89-4b96-ad0e-300b059acfad.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=PL7wJ-hWx7NhP~aQsiDDgh7QYhOLIu4L3XulrHmiXvX6-VOq2vM5F1b-qdBQRAxDw5mV~y286DBH-pZ0kzBT7YbRKbvgLMOg2gaAFRyewn1qNt2qr6ZXlWlwZHHKcXXyLRB~IxASGpbhK~vb7bH9EjAR3ywWwitZut-mQFcY-B3SWxtuOzZZqwhVL0cj7QafIvxWJsqvXDqS2J6iKb7AfBZjDmJeBL9MugdLAlLKHK7N8d80tUJmCwfbzIooyGN9snDBk1UI9ScoIaXzpdzWazIRR~0hIDwF5W4sbQ3JbcGwWJz5MBnFOURhFxlnTrXgH75lPLLFRqLmNppEgBeq3Q__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;created_at&quot;: &quot;2025-08-02T13:25:39+03:00&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T13:25:40+03:00&quot;
-            },
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:40.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:40.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: &quot;01986af5-9a1d-705d-a854-50fe75e1578c&quot;,
-            &quot;user_id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-            &quot;body&quot;: &quot;الأمم المتحدة توثّق استهداف منتظري المساعدات في غزة بإطلاق نار حي\nفي واقعة مروعة، وثّق فريق أممي في قطاع غزة لحظة إطلاق نار حي على حشد من المدنيين الفلسطينيين كانوا ينتظرون دورهم لاستلام مساعدات إنسانية بالقرب من أحد مراكز التوزيع.&quot;,
-            &quot;external_url&quot;: &quot;https://www.skynewsarabia.com/middle-east/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;غزة&quot;,
-                    &quot;الأمم المتحدة&quot;,
-                    &quot;المساعدات الإنسانية&quot;
-                ]
-            },
-            &quot;hashtags&quot;: [
-                &quot;غزة&quot;,
-                &quot;الأمم المتحدة&quot;,
-                &quot;المساعدات الإنسانية&quot;
-            ],
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-a270-7075-8ef8-ef75ec51bbf3&quot;,
-                    &quot;name&quot;: &quot;media/images/70579c87-700f-44d7-9472-62e85b6ee288.png&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/70579c87-700f-44d7-9472-62e85b6ee288.png?Expires=1754144739&amp;Signature=Uad10v6ced3zE2PWbxc13HVsl7hju89nbWkkNR0eH2SCgJkEljcPyZnsPraroUgJ8Wv3saxDH7Dcys9PrEsB~6EKrdAvWdvZMZOdwxuagv4jn77RKIoSslTS2RVOpI1iOwObiG1BtcGlT0DihFxD1G8SikuMaocAs-LjQxpORP-~LBZe2wDM97yLM6-M04eIZmduIzmER9QRPAacpX88IELyGipMZtzkMmMhT2S6emBMSyRlKy5VDVMlPy1nXIsz0gJP7WmNS0yFHI~XOL1zcSC2orjFtQn46SPgMSXTxODJqb-wGaJY67JYXMz-CiA1IQ6W4PAqRhm2Qcs7kfyFGQ__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-                &quot;username&quot;: &quot;skynewsarabia&quot;,
-                &quot;name&quot;: null,
-                &quot;bio&quot;: null,
-                &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;created_at&quot;: &quot;2025-08-02T13:25:36+03:00&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T13:25:50+03:00&quot;
-            },
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:37.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:37.000000Z&quot;
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://humzat.local/api/posts?page=1&quot;,
         &quot;last&quot;: &quot;http://humzat.local/api/posts?page=1&quot;,
@@ -3334,7 +2838,7 @@ access-control-allow-origin: *
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
+        &quot;from&quot;: null,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -3355,8 +2859,8 @@ access-control-allow-origin: *
         ],
         &quot;path&quot;: &quot;http://humzat.local/api/posts&quot;,
         &quot;per_page&quot;: 10,
-        &quot;to&quot;: 6,
-        &quot;total&quot;: 6
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     }
 }</code>
  </pre>
@@ -3445,14 +2949,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c" \
+    --get "http://humzat.local/api/posts/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c"
+    "http://humzat.local/api/posts/consequatur"
 );
 
 const headers = {
@@ -3469,7 +2973,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-posts--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -3477,54 +2981,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: &quot;01986af5-9a1d-705d-a854-50fe75e1578c&quot;,
-        &quot;user_id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-        &quot;body&quot;: &quot;الأمم المتحدة توثّق استهداف منتظري المساعدات في غزة بإطلاق نار حي\nفي واقعة مروعة، وثّق فريق أممي في قطاع غزة لحظة إطلاق نار حي على حشد من المدنيين الفلسطينيين كانوا ينتظرون دورهم لاستلام مساعدات إنسانية بالقرب من أحد مراكز التوزيع.&quot;,
-        &quot;external_url&quot;: &quot;https://www.skynewsarabia.com/middle-east/1811900-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D8%A7%D9%95%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%8A-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A7%D8%AA-%D8%BA%D8%B2%D8%A9&quot;,
-        &quot;meta&quot;: {
-            &quot;tags&quot;: [
-                &quot;غزة&quot;,
-                &quot;الأمم المتحدة&quot;,
-                &quot;المساعدات الإنسانية&quot;
-            ]
-        },
-        &quot;hashtags&quot;: [
-            &quot;غزة&quot;,
-            &quot;الأمم المتحدة&quot;,
-            &quot;المساعدات الإنسانية&quot;
-        ],
-        &quot;media&quot;: [
-            {
-                &quot;id&quot;: &quot;01986af5-a270-7075-8ef8-ef75ec51bbf3&quot;,
-                &quot;name&quot;: &quot;media/images/70579c87-700f-44d7-9472-62e85b6ee288.png&quot;,
-                &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/70579c87-700f-44d7-9472-62e85b6ee288.png?Expires=1754144739&amp;Signature=Uad10v6ced3zE2PWbxc13HVsl7hju89nbWkkNR0eH2SCgJkEljcPyZnsPraroUgJ8Wv3saxDH7Dcys9PrEsB~6EKrdAvWdvZMZOdwxuagv4jn77RKIoSslTS2RVOpI1iOwObiG1BtcGlT0DihFxD1G8SikuMaocAs-LjQxpORP-~LBZe2wDM97yLM6-M04eIZmduIzmER9QRPAacpX88IELyGipMZtzkMmMhT2S6emBMSyRlKy5VDVMlPy1nXIsz0gJP7WmNS0yFHI~XOL1zcSC2orjFtQn46SPgMSXTxODJqb-wGaJY67JYXMz-CiA1IQ6W4PAqRhm2Qcs7kfyFGQ__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                &quot;type&quot;: &quot;image&quot;,
-                &quot;meta&quot;: null,
-                &quot;created_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-08-02T10:25:39.000000Z&quot;
-            }
-        ],
-        &quot;comments&quot;: [],
-        &quot;type&quot;: &quot;IMAGE&quot;,
-        &quot;user&quot;: {
-            &quot;id&quot;: &quot;01986af5-950c-72fd-91ef-07c57cbb0730&quot;,
-            &quot;username&quot;: &quot;skynewsarabia&quot;,
-            &quot;name&quot;: null,
-            &quot;bio&quot;: null,
-            &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/0811d7f3-8833-4d9c-91a9-c5a998b0e6f5.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=hnXSzYO1LIs3XpBtDRniCNFwBf5nmozDtPjQyvifwBW0IYN9eZeb3xlGzVbWhq8j1i~y1QxfmxgJ38iYcPPPXQpS3CO3av-7ooiEGStEncWUd0o0TJNe1bQs4BupaV-lg0h3~2KOJc-3C-UH-9DF819YzqTcdvwjzizDvm6X6mSp~QywPninWZm-aEiqrm~iGJ0afCpLVPS~cU-ZXtXIIc7CUlz-vGlJQ9xagKYQumkZojY0tCsDEGMbxZAMghrKN05eVNdT0hTGg8KsNOlGA~Ao3KKuhPVE4~LayMYsdlFAq5GUsxhsbc-FTQj9uTG4wow-fwo0cBXPGpIAUMSVHg__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-            &quot;created_at&quot;: &quot;2025-08-02T13:25:36+03:00&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T13:25:50+03:00&quot;
-        },
-        &quot;created_at&quot;: &quot;2025-08-02T10:25:37.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-08-02T10:25:37.000000Z&quot;
-    }
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Post] consequatur&quot;
 }</code>
  </pre>
     </span>
@@ -3604,10 +3065,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-posts--id-"
-               value="01986af5-9a1d-705d-a854-50fe75e1578c"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the post. Example: <code>01986af5-9a1d-705d-a854-50fe75e1578c</code></p>
+<p>The ID of the post. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -3624,14 +3085,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c/share" \
+    "http://humzat.local/api/posts/consequatur/share" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c/share"
+    "http://humzat.local/api/posts/consequatur/share"
 );
 
 const headers = {
@@ -3724,10 +3185,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="post_id"                data-endpoint="POSTapi-posts--post_id--share"
-               value="01986af5-9a1d-705d-a854-50fe75e1578c"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the post. Example: <code>01986af5-9a1d-705d-a854-50fe75e1578c</code></p>
+<p>The ID of the post. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -3751,6 +3212,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"body\": \"consequatur\",
     \"external_url\": \"https:\\/\\/www.mueller.com\\/laborum-eius-est-dolor-dolores-minus-voluptatem\",
     \"type\": \"AUDIO\",
+    \"unique_external_url\": false,
     \"meta\": {
         \"tags\": [
             \"sufvyvddqamniihfqcoyn\"
@@ -3774,6 +3236,7 @@ let body = {
     "body": "consequatur",
     "external_url": "https:\/\/www.mueller.com\/laborum-eius-est-dolor-dolores-minus-voluptatem",
     "type": "AUDIO",
+    "unique_external_url": false,
     "meta": {
         "tags": [
             "sufvyvddqamniihfqcoyn"
@@ -3897,6 +3360,27 @@ Must be one of:
 <ul style="list-style-type: square;"><li><code>TEXT</code></li> <li><code>VIDEO</code></li> <li><code>IMAGE</code></li> <li><code>LINK</code></li> <li><code>AUDIO</code></li> <li><code>POLL</code></li></ul>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unique_external_url</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="POSTapi-posts" style="display: none">
+            <input type="radio" name="unique_external_url"
+                   value="true"
+                   data-endpoint="POSTapi-posts"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-posts" style="display: none">
+            <input type="radio" name="unique_external_url"
+                   value="false"
+                   data-endpoint="POSTapi-posts"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>false</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
         <details>
             <summary style="padding-bottom: 10px;">
                 <b style="line-height: 2;"><code>meta</code></b>&nbsp;&nbsp;
@@ -3935,7 +3419,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c" \
+    "http://humzat.local/api/posts/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3952,7 +3436,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c"
+    "http://humzat.local/api/posts/consequatur"
 );
 
 const headers = {
@@ -4060,10 +3544,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-posts--id-"
-               value="01986af5-9a1d-705d-a854-50fe75e1578c"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the post. Example: <code>01986af5-9a1d-705d-a854-50fe75e1578c</code></p>
+<p>The ID of the post. Example: <code>consequatur</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4127,14 +3611,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c" \
+    "http://humzat.local/api/posts/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/posts/01986af5-9a1d-705d-a854-50fe75e1578c"
+    "http://humzat.local/api/posts/consequatur"
 );
 
 const headers = {
@@ -4227,10 +3711,643 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-posts--id-"
-               value="01986af5-9a1d-705d-a854-50fe75e1578c"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the post. Example: <code>01986af5-9a1d-705d-a854-50fe75e1578c</code></p>
+<p>The ID of the post. Example: <code>consequatur</code></p>
+            </div>
+                    </form>
+
+                <h1 id="user-follow-system">User Follow System</h1>
+
+    <p>APIs for following/unfollowing users and fetching followers/following lists.</p>
+<p>Requires authentication via Sanctum.</p>
+
+                                <h2 id="user-follow-system-POSTapi-users--user_id--follow">Follow a user.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Authenticated user follows the specified user.</p>
+
+<span id="example-requests-POSTapi-users--user_id--follow">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://humzat.local/api/users/consequatur/follow" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://humzat.local/api/users/consequatur/follow"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-users--user_id--follow">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Followed successfully.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-users--user_id--follow" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-users--user_id--follow"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-users--user_id--follow"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-users--user_id--follow" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-users--user_id--follow">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-users--user_id--follow" data-method="POST"
+      data-path="api/users/{user_id}/follow"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-users--user_id--follow', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-users--user_id--follow"
+                    onclick="tryItOut('POSTapi-users--user_id--follow');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-users--user_id--follow"
+                    onclick="cancelTryOut('POSTapi-users--user_id--follow');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-users--user_id--follow"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/users/{user_id}/follow</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-users--user_id--follow"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-users--user_id--follow"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="POSTapi-users--user_id--follow"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user"                data-endpoint="POSTapi-users--user_id--follow"
+               value="123e4567-e89b-12d3-a456-426614174000"
+               data-component="url">
+    <br>
+<p>The UUID of the user to follow. Example: <code>123e4567-e89b-12d3-a456-426614174000</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="user-follow-system-DELETEapi-users--user_id--unfollow">Unfollow a user.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Authenticated user unfollows the specified user.</p>
+
+<span id="example-requests-DELETEapi-users--user_id--unfollow">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://humzat.local/api/users/consequatur/unfollow" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://humzat.local/api/users/consequatur/unfollow"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-users--user_id--unfollow">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unfollowed successfully.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-users--user_id--unfollow" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-users--user_id--unfollow"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-users--user_id--unfollow"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-users--user_id--unfollow" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-users--user_id--unfollow">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-users--user_id--unfollow" data-method="DELETE"
+      data-path="api/users/{user_id}/unfollow"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-users--user_id--unfollow', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-users--user_id--unfollow"
+                    onclick="tryItOut('DELETEapi-users--user_id--unfollow');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-users--user_id--unfollow"
+                    onclick="cancelTryOut('DELETEapi-users--user_id--unfollow');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-users--user_id--unfollow"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/users/{user_id}/unfollow</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-users--user_id--unfollow"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-users--user_id--unfollow"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="DELETEapi-users--user_id--unfollow"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user"                data-endpoint="DELETEapi-users--user_id--unfollow"
+               value="123e4567-e89b-12d3-a456-426614174000"
+               data-component="url">
+    <br>
+<p>The UUID of the user to unfollow. Example: <code>123e4567-e89b-12d3-a456-426614174000</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="user-follow-system-GETapi-users--user_id--followers">Get followers of a user.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Returns a paginated list of users who follow the specified user.</p>
+
+<span id="example-requests-GETapi-users--user_id--followers">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://humzat.local/api/users/consequatur/followers" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://humzat.local/api/users/consequatur/followers"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-users--user_id--followers">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-426614174001&quot;,
+            &quot;username&quot;: &quot;johndoe&quot;,
+            &quot;name&quot;: &quot;John Doe&quot;,
+            &quot;bio&quot;: &quot;Example bio&quot;,
+            &quot;profile_picture_url&quot;: &quot;https://example.com/profile.jpg&quot;,
+            &quot;followers_count&quot;: 10,
+            &quot;following_count&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-08-05T12:00:00Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-08-05T12:00:00Z&quot;
+        }
+    ],
+    &quot;links&quot;: {},
+    &quot;meta&quot;: {}
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-users--user_id--followers" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-users--user_id--followers"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-users--user_id--followers"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-users--user_id--followers" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-users--user_id--followers">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-users--user_id--followers" data-method="GET"
+      data-path="api/users/{user_id}/followers"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-users--user_id--followers', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-users--user_id--followers"
+                    onclick="tryItOut('GETapi-users--user_id--followers');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-users--user_id--followers"
+                    onclick="cancelTryOut('GETapi-users--user_id--followers');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-users--user_id--followers"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/users/{user_id}/followers</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-users--user_id--followers"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-users--user_id--followers"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="GETapi-users--user_id--followers"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user"                data-endpoint="GETapi-users--user_id--followers"
+               value="123e4567-e89b-12d3-a456-426614174000"
+               data-component="url">
+    <br>
+<p>The UUID of the user whose followers are being fetched. Example: <code>123e4567-e89b-12d3-a456-426614174000</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="user-follow-system-GETapi-users--user_id--following">Get users that the user is following.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Returns a paginated list of users that the specified user is following.</p>
+
+<span id="example-requests-GETapi-users--user_id--following">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://humzat.local/api/users/consequatur/following" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://humzat.local/api/users/consequatur/following"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-users--user_id--following">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-426614174002&quot;,
+            &quot;username&quot;: &quot;janedoe&quot;,
+            &quot;name&quot;: &quot;Jane Doe&quot;,
+            &quot;bio&quot;: &quot;Another bio&quot;,
+            &quot;profile_picture_url&quot;: &quot;https://example.com/profile2.jpg&quot;,
+            &quot;followers_count&quot;: 8,
+            &quot;following_count&quot;: 12,
+            &quot;created_at&quot;: &quot;2025-08-05T12:00:00Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-08-05T12:00:00Z&quot;
+        }
+    ],
+    &quot;links&quot;: {},
+    &quot;meta&quot;: {}
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-users--user_id--following" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-users--user_id--following"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-users--user_id--following"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-users--user_id--following" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-users--user_id--following">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-users--user_id--following" data-method="GET"
+      data-path="api/users/{user_id}/following"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-users--user_id--following', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-users--user_id--following"
+                    onclick="tryItOut('GETapi-users--user_id--following');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-users--user_id--following"
+                    onclick="cancelTryOut('GETapi-users--user_id--following');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-users--user_id--following"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/users/{user_id}/following</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-users--user_id--following"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-users--user_id--following"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="GETapi-users--user_id--following"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the user. Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user"                data-endpoint="GETapi-users--user_id--following"
+               value="123e4567-e89b-12d3-a456-426614174000"
+               data-component="url">
+    <br>
+<p>The UUID of the user whose following list is being fetched. Example: <code>123e4567-e89b-12d3-a456-426614174000</code></p>
             </div>
                     </form>
 
@@ -4251,14 +4368,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d" \
+    --get "http://humzat.local/api/users/consequatur" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d"
+    "http://humzat.local/api/users/consequatur"
 );
 
 const headers = {
@@ -4275,7 +4392,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-users--user_id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4283,21 +4400,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: &quot;01986af5-a34a-70dd-bd82-0458b50c888d&quot;,
-        &quot;username&quot;: &quot;cnn&quot;,
-        &quot;name&quot;: null,
-        &quot;bio&quot;: null,
-        &quot;profile_picture_url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/profile_pictures/25c6e293-bf89-4b96-ad0e-300b059acfad.com&amp;client=NEWS_360&amp;size=96&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL?Expires=1754154948&amp;Signature=PL7wJ-hWx7NhP~aQsiDDgh7QYhOLIu4L3XulrHmiXvX6-VOq2vM5F1b-qdBQRAxDw5mV~y286DBH-pZ0kzBT7YbRKbvgLMOg2gaAFRyewn1qNt2qr6ZXlWlwZHHKcXXyLRB~IxASGpbhK~vb7bH9EjAR3ywWwitZut-mQFcY-B3SWxtuOzZZqwhVL0cj7QafIvxWJsqvXDqS2J6iKb7AfBZjDmJeBL9MugdLAlLKHK7N8d80tUJmCwfbzIooyGN9snDBk1UI9ScoIaXzpdzWazIRR~0hIDwF5W4sbQ3JbcGwWJz5MBnFOURhFxlnTrXgH75lPLLFRqLmNppEgBeq3Q__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-        &quot;created_at&quot;: &quot;2025-08-02T13:25:39+03:00&quot;,
-        &quot;updated_at&quot;: &quot;2025-08-02T13:25:40+03:00&quot;
-    }
+    &quot;message&quot;: &quot;The route api/users/consequatur could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -4377,10 +4484,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="GETapi-users--user_id-"
-               value="01986af5-a34a-70dd-bd82-0458b50c888d"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>01986af5-a34a-70dd-bd82-0458b50c888d</code></p>
+<p>The ID of the user. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -4397,14 +4504,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/posts" \
+    --get "http://humzat.local/api/users/consequatur/posts" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/posts"
+    "http://humzat.local/api/users/consequatur/posts"
 );
 
 const headers = {
@@ -4421,7 +4528,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-users--user_id--posts">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4429,74 +4536,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: &quot;01986af5-a7f4-7027-8c69-63e1d53b8adf&quot;,
-            &quot;user_id&quot;: &quot;01986af5-a34a-70dd-bd82-0458b50c888d&quot;,
-            &quot;body&quot;: &quot;ترامب يكشف تفاصيل زيارة مبعوثه لمركز مساعدات أمريكي في غزة\nأعلن الرئيس الأمريكي دونالد ترامب، يوم الجمعة، عن تفاصيل زيارة قام بها مبعوثه للشرق الأوسط، ستيف ويتكوف، إلى قطاع غزة. وأوضح ترامب أن ويتكوف تفقد موقعًا لتوزيع المساعدات تشرف عليه مؤسسة \&quot;غزة الإنسانية\&quot;، وهي منظمة مثيرة للجدل تتلقى دعمًا من الولايات المتحدة.&quot;,
-            &quot;external_url&quot;: &quot;https://arabic.cnn.com/middle-east/article/2025/08/02/trump-says-he-spoke-with-witkoff-after-his-trip-to-gaza&quot;,
-            &quot;meta&quot;: {
-                &quot;tags&quot;: [
-                    &quot;دونالد ترامب&quot;,
-                    &quot;قطاع غزة&quot;,
-                    &quot;السياسة الأمريكية&quot;
-                ]
-            },
-            &quot;media&quot;: [
-                {
-                    &quot;id&quot;: &quot;01986af5-ae72-715c-9ffc-531774730ae5&quot;,
-                    &quot;name&quot;: &quot;media/images/b7715a11-14b3-4033-ae69-4b000e2617cd.jpg&quot;,
-                    &quot;url&quot;: &quot;https://d1070l6upf61hp.cloudfront.net/media/images/b7715a11-14b3-4033-ae69-4b000e2617cd.jpg?Expires=1754144742&amp;Signature=cz-pghpaGQFC8AJ5Rn20reEbSlboJ1vMuGgbdPl4VGAMYrjjrFSyCiBk8Kd8MwnmBvaO60QM4XSm7YQHIPYkOt2gzjOTXc6SB68rDRp66GlSNxynHHeHOUOQV64jXhAcrayFkieKcYvd~laM7bwiw~j0CnLGLM-0yLvC4K-GuvfkyjThKw9bv6UeHDp~Es5lfdZAZaZ2ASqXAQ22x-UAVc~fwamRM5eCI4Oji6hYmP4f9K6YTMfJD4wGIgW9mBjCfJNtB2JiMeywwq~7FfrW2HTcc5fhevg0n6DYaIcOMJb72dAGBvCaipZwjfJjPR74VVNaq8iKckAKckeInQrA5A__&amp;Key-Pair-Id=K1QD0FFQU2OZI5&quot;,
-                    &quot;type&quot;: &quot;image&quot;,
-                    &quot;meta&quot;: null,
-                    &quot;created_at&quot;: &quot;2025-08-02T10:25:42.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-08-02T10:25:42.000000Z&quot;
-                }
-            ],
-            &quot;comments&quot;: [],
-            &quot;type&quot;: &quot;IMAGE&quot;,
-            &quot;created_at&quot;: &quot;2025-08-02T10:25:40.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-08-02T10:25:40.000000Z&quot;
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/posts?page=1&quot;,
-        &quot;last&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/posts?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/posts?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/posts&quot;,
-        &quot;per_page&quot;: 10,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
-    }
+    &quot;message&quot;: &quot;The route api/users/consequatur/posts could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -4576,10 +4620,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="GETapi-users--user_id--posts"
-               value="01986af5-a34a-70dd-bd82-0458b50c888d"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>01986af5-a34a-70dd-bd82-0458b50c888d</code></p>
+<p>The ID of the user. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -4596,14 +4640,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/comments" \
+    --get "http://humzat.local/api/users/consequatur/comments" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/comments"
+    "http://humzat.local/api/users/consequatur/comments"
 );
 
 const headers = {
@@ -4620,7 +4664,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-users--user_id--comments">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4628,45 +4672,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 20
-x-ratelimit-remaining: 19
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/comments?page=1&quot;,
-        &quot;last&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/comments?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: null,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/comments?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://humzat.local/api/users/01986af5-a34a-70dd-bd82-0458b50c888d/comments&quot;,
-        &quot;per_page&quot;: 10,
-        &quot;to&quot;: null,
-        &quot;total&quot;: 0
-    }
+    &quot;message&quot;: &quot;The route api/users/consequatur/comments could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -4746,10 +4756,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="GETapi-users--user_id--comments"
-               value="01986af5-a34a-70dd-bd82-0458b50c888d"
+               value="consequatur"
                data-component="url">
     <br>
-<p>The ID of the user. Example: <code>01986af5-a34a-70dd-bd82-0458b50c888d</code></p>
+<p>The ID of the user. Example: <code>consequatur</code></p>
             </div>
                     </form>
 
@@ -4769,7 +4779,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://humzat.local/api/users/profile-picture" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/php6tJomI" </code></pre></div>
+    --form "image=@/tmp/php59yHoy" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4874,7 +4884,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 3072 kilobytes. Example: <code>/tmp/php6tJomI</code></p>
+<p>Must be an image. Must not be greater than 3072 kilobytes. Example: <code>/tmp/php59yHoy</code></p>
         </div>
         </form>
 
