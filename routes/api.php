@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SaveController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoteController;
 use App\Http\Controllers\BlockController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\FollowController;
@@ -63,5 +64,8 @@ Route::middleware(['api', 'throttle:api'])->group(function () {
         Route::get('/saved-posts', [SaveController::class, 'index']);
         Route::post('/posts/{post}/save', [SaveController::class, 'save']);
         Route::delete('/posts/{post}/unsave', [SaveController::class, 'unsave']);
+        // Vote endpoints
+        Route::post('/posts/{post}/vote', [VoteController::class, 'vote']);
+        Route::delete('/posts/{post}/vote', [VoteController::class, 'removeVote']);
     });
 });
