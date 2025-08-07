@@ -64,8 +64,7 @@ Route::middleware(['api', 'throttle:api'])->group(function () {
         Route::get('/saved-posts', [SaveController::class, 'index']);
         Route::post('/posts/{post}/save', [SaveController::class, 'save']);
         Route::delete('/posts/{post}/unsave', [SaveController::class, 'unsave']);
-        // Vote endpoints
-        Route::post('/posts/{post}/vote', [VoteController::class, 'vote']);
-        Route::delete('/posts/{post}/vote', [VoteController::class, 'removeVote']);
+        // Vote endpoint
+        Route::post('/vote', [VoteController::class, 'vote']);
     });
 });

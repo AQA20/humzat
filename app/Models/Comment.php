@@ -39,4 +39,19 @@ class Comment extends Model
     {
         return $this->hasMany(Comment::class, 'parent_id');
     }
+
+    public function votes()
+    {
+        return $this->morphMany(Vote::class, 'votable');
+    }
+
+    public function upvotes()
+    {
+        return $this->votes()->where('is_upvote', true);
+    }
+
+    public function downvotes()
+    {
+        return $this->votes()->where('is_upvote', false);
+    }
 }

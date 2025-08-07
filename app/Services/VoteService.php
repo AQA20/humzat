@@ -2,44 +2,40 @@
 
 namespace App\Services;
 
-use App\Models\Post;
 use App\Models\User;
 use App\Models\Vote;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class VoteService
 {
-    public function vote(User $user, Post $post, bool $isUpvote): ?Vote
+    public function vote(User $user, Model $votable, bool $isUpvote): ?Vote
     {
+        if (!method_exists($votable, 'votes')) {
+            throw new \InvalidArgumentException("Model " . get_class($votable) . " is not votable.");
+        }
+
         $existing = Vote::where('user_id', $user->id)
-            ->where('post_id', $post->id)
+            ->where('votable_id', $votable->getKey())
+            ->where('votable_type', $votable::class)
             ->first();
 
         if ($existing) {
             if ($existing->is_upvote === $isUpvote) {
-                // Same vote again = remove (toggle off)
-                $existing->delete();
+                $existing->delete(); // toggle off
                 return null;
             }
 
-            // Change direction
-            $existing->is_upvote = $isUpvote;
-            $existing->save();
+            $existing->update(['is_upvote' => $isUpvote]);
             return $existing;
         }
 
         return Vote::create([
             'id' => Str::uuid(),
             'user_id' => $user->id,
-            'post_id' => $post->id,
+            'votable_id' => $votable->getKey(),
+            'votable_type' => $votable::class,
             'is_upvote' => $isUpvote,
         ]);
-    }
-
-    public function removeVote(User $user, Post $post): void
-    {
-        Vote::where('user_id', $user->id)
-            ->where('post_id', $post->id)
-            ->delete();
     }
 }

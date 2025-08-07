@@ -19,6 +19,17 @@ class CommentResource extends JsonResource
             'body'      => $this->body,
             'user'      => new UserResource($this->whenLoaded('user')),
             'replies'   => CommentResource::collection($this->whenLoaded('replies')),
+            'votes' => [
+                'upvotes' => $this->upvotes()->count(),
+                'downvotes' => $this->downvotes()->count(),
+            ],
+            'my_vote' => $this->when($request->user(), function () use ($request) {
+                $vote = $this->votes()
+                    ->where('user_id', $request->user()->id)
+                    ->first();
+
+                return $vote ? ($vote->is_upvote ? 'upvote' : 'downvote') : null;
+            }),
             'parent_id' => $this->parent_id,
             'created_at' => $this->created_at,
         ];
