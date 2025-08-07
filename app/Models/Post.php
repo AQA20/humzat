@@ -62,7 +62,7 @@ class Post extends Model
 
     public function votes()
     {
-        return $this->hasMany(Vote::class);
+        return $this->morphMany(Vote::class, 'votable');
     }
 
     public function upvotes()
