@@ -59,4 +59,19 @@ class Post extends Model
             'user_id'
         )->withTimestamps();
     }
+
+    public function votes()
+    {
+        return $this->hasMany(Vote::class);
+    }
+
+    public function upvotes()
+    {
+        return $this->votes()->where('is_upvote', true);
+    }
+
+    public function downvotes()
+    {
+        return $this->votes()->where('is_upvote', false);
+    }
 }
